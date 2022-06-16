@@ -11,7 +11,7 @@ $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     if(!isset($_GET['item_No'])){
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/inventory.php");
         exit;
     }
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $row = $result->fetch_assoc();
 
     if(!$row){
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/inventory.php");
         exit;
     }
 
