@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         $successMessage = "Supplier added successfully!";
         
-        header("location:/KaffeMariaTrial/home.php");
+        header("location:/kaffemariadb/home.php");
         exit;
 
     }while(false);
