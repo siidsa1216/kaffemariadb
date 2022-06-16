@@ -1,75 +1,58 @@
 <?php
-require 'condb.php';
-include 'include/head.html';
-
-$beverage_No="";
-$beverage_flavor="";
-$beverage_qty="";
-$beverage_size="";
-$beverage_price="";
-$payment_method="";
-
+ require 'condb.php';
+ include 'include/head.html';
+ 
+ $beverage_No="";
+ $beverage_flavor="";
+ $beverage_qty="";
+ $beverage_size="";
+ $beverage_price="";
+ $payment_method="";
+ 
 
 $errorMessage = "";
 $successMessage = "";
 
-if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-    if(!isset($_GET['beverage_No'])){
-        header("location:/kaffemariadb/bev.php");
-        exit;
-    }
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $beverage_flavor=$_POST["beverage_flavor"];
+    $beverage_qty=$_POST["beverage_qty"];
+    $beverage_size=$_POST["beverage_size"];
+    $beverage_price=$_POST["beverage_price"];
+    $payment_method=$_POST["payment_method"];
 
-    $beverage_No = $_GET['beverage_No'];
-    $sql = "SELECT * FROM beverage WHERE beverage_No = $beverage_No";
-
-    $result= $connection->query($sql);
-    $row = $result->fetch_assoc();
-
-    if(!$row){
-        header("location:/kaffemariadb/bev.php");
-        exit;
-    }
-
-    $beverage_flavor= $row["beverage_flavor"];
-    $beverage_qty= $row["beverage_qty"];
-    $beverage_size= $row["beverage_size"];
-    $beverage_price= $row["beverage_price"];
-    $payment_method= $row["payment_method"];
-
-}
-
-else{
-    $beverage_flavor=$row["beverage_flavor"];
-    $beverage_qty=$row["beverage_qty"];
-    $beverage_size=$row["beverage_size"];
-    $beverage_price=$row["beverage_price"];
-    $payment_method=$row["payment_method"];
-
+    
     do {
         if(empty($beverage_flavor) || empty($beverage_qty) || empty($beverage_size) || empty($beverage_price) || empty($payment_method)) 
         {
             $errorMessage = "Please fill up the required fields";
         break;        
         } 
-
-        $beverage_No = $_GET['beverage_No'];
-
-        $sql = "UPDATE beverage SET beverage_flavor = '$beverage_flavor', beverage_qty = '$beverage_qty',  beverage_size= '$beverage_size', beverage_price='$beverage_price', payment_method='$payment_method'
-        WHERE beverage_No=$beverage_No";
-
+        // add new client into the db
+        $sql = "INSERT INTO beverage (beverage_flavor,beverage_qty,beverage_size,beverage_price,payment_method)".
+                "VALUES('$beverage_flavor', '$beverage_qty','$beverage_size','$beverage_price', '$payment_method')";
+       
         $result= $connection->query($sql);
 
-        if(!$result) 
-        {
-            $errorMessage ="Invalid query: ". $connection->error;
-            break;      
-        } 
-        $successMessage = "Supplier updated successfully!";
+        if (!$result){
+            $errorMessage= "Invalid query: ".$connection->error;
+            break;
+        }
 
+      
+        $beverage_No="";
+        $beverage_flavor="";
+        $beverage_qty="";
+        $beverage_size="";
+        $beverage_price="";
+        $payment_method="";
+        
+        
+        $successMessage = "Supplier added successfully!";
+        
         header("location:/kaffemariadb/bev.php");
         exit;
-    }while(false);
 
+    }while(false);
 }
 ?>
 
@@ -87,7 +70,7 @@ else{
         }
 
         ?>
-        <form method = 'POST'>
+         <form method = 'POST'>
             <input type="hidden" name="beverage_No" value="<?php echo $beverage_No; ?>">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">beverage_flavor</label>
