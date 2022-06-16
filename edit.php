@@ -13,7 +13,7 @@ $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     if(!isset($_GET['supplier_ID'])){
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/supplier.php");
         exit;
     }
 
@@ -64,7 +64,7 @@ else{
         } 
         $successMessage = "Supplier updated successfully!";
 
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/supplier.php");
         exit;
     }while(false);
 
