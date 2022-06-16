@@ -25,7 +25,7 @@ require 'condb.php';
                  <li><a href="/kaffemariadb/home1.html">HOME</a></li>
                 <li><a href="/kaffemariadb/bev.php">BEVERAGE</a></li>
                 <li><a href="/kaffemariadb/inventory.php">INVENTORY</a></li>
-                <li><a href="/kaffemariadb/staff.php">EMPLOYEE</a></li>
+                <li><a href="/kaffemariadb/staff.php">STAFF</a></li>
                 <li><a href="">POS</a></li>
                 <li><a href="">SALES</a></li>
                 <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
