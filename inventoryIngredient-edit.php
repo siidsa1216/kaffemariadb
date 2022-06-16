@@ -11,7 +11,7 @@ $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     if(!isset($_GET['ingredient_ID'])){
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/inventory.php");
         exit;
     }
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $row = $result->fetch_assoc();
 
     if(!$row){
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/inventory.php");
         exit;
     }
 
@@ -132,7 +132,7 @@ else{
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/kaffemariadb/home.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="/kaffemariadb/inventory.php" role="button">Cancel</a>
                 </div>
             </div>  
         </form>  
