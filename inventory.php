@@ -133,8 +133,8 @@ require 'condb.php';
                     <td>".$row["item_size"]. "</td>
                     <td>".$row["item_description"]. "</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/edit.php?item_No=$row[item_No]'>Edit</a>
-                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/delete.php?item_No=$row[item_No]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/inventoryItem-edit.php?item_No=$row[item_No]'>Edit</a>
+                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/inventoryItem-delete.php?item_No=$row[item_No]'>Delete</a>
                     </td>
                 </tr>";
                 }
