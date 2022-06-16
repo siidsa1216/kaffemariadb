@@ -4,7 +4,7 @@ session_start();
 include("functions.php");
 require 'condb.php';
 
-$user_data = check_login($con);
+$user_data = check_login($connection);
 ?>
 
 <!DOCTYPE html>
