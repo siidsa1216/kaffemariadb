@@ -1,47 +1,19 @@
 <?php
 require 'condb.php';
+include 'include/sidebar.html';
+include 'include/topbar.html';
+include 'include/head.html';
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <title>Login</title>
-</head>
-
 <body>
-    <div class="topbar">
-        <h1>logo</h1>
-        <h1 style="margin-left:1250px;">profile</h1>
-
-    </div>
-    <div class="sidebar">
-        <div class="buttonsss">
-            <ul>
-            <li><a href="/kaffemariadb/home1.html">HOME</a></li>
-                <li><a href="/kaffemariadb/bev.php">BEVERAGE</a></li>
-                <li><a href="/kaffemariadb/inventory.php">INVENTORY</a></li>
-                <li><a href="/kaffemariadb/staff.php">STAFF</a></li>
-                <li><a href="">POS</a></li>
-                <li><a href="">SALES</a></li>
-                <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
-                <li><a href="/kaffemariadb/logout.php">LOGOUT</a></li>
-
-            </ul>
-        </div>
-    </div>
     <div>
     <div class="bigside">
-        <div class="container my-5" style="margin:66px;">
+        <div class="container my-5" style="margin:22px;">
             <h1>Staff</h1>
             <a class="btn btn-primary" href="/kaffemariadb/staff-add-function.php" role="button">Add Staff</a>
     
         </div>
-        <table class="table" style="margin:66px;">
+        <table class="table">
             <thead>
                 <th>Staff ID</th>
                 <th>First Name</th>

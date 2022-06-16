@@ -52,4 +52,5 @@ include 'include/head.html';
         </table>
     </div>   
 </body>
+>>>>>>> Stashed changes
 </html>

@@ -1,5 +1,6 @@
 <?php
  require 'condb.php';
+ include 'include/head.html';
  
 $supplier_fname="";
 $supplier_mname="";
@@ -41,24 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $supplier_address="";
         
         $successMessage = "Supplier added successfully!";
-        
-        header("location:/kaffemariadb/home.php");
+       
+        header("location:/kaffemariadb/supplier.php");
         exit;
 
     }while(false);
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <title>My Shop</title>
-</head>
 <body>
     <div class="container my-5">
         <h2>New Supplier</h2>
@@ -71,7 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
         }
-
         ?>
         <form method = 'POST'>
             <div class="row mb-3">
@@ -119,7 +108,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/kaffemariadb/home.php" role="button">Cancel</button></a>
+
+                    <a class="btn btn-outline-primary" href="/kaffemariadb/supplier.php" role="button">Cancel</button></a>
+
                 </div>
             </div>  
         </form>  

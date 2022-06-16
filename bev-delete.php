@@ -1,3 +1,4 @@
+
 <?php
 if(isset($_GET['beverage_No'])){
     $beverage_No = $_GET['beverage_No'];

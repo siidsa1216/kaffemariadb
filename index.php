@@ -18,7 +18,5 @@ $user_data = check_login($connection);
     <a href="logout.php">Logout</a>
 </head>
 <body>
-    <H1>WELCOME TO KAFFE MARIA</H1>
-  
 </body>
 </html>
