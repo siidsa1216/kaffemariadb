@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     $staffID = $_GET['staffID'];
 
-    $sql = "SELECT * FROM supplier WHERE supplier_ID=$staffID";
+    $sql = "SELECT * FROM staff WHERE staffID=$staffID";
     $result= $connection->query($sql);
     $row = $result->fetch_assoc();
 
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $staff_mname=$row["staff_mname"];
     $staff_lname=$row["staff_lname"];
     $staff_address=$row["staff_address"];
-    $staff_contactno=$row["supplier_contactno"];
+    $staff_contactno=$row["staff_contactno"];
     $staff_position=$row["staff_address"];
 
 }
@@ -43,8 +43,7 @@ else{
     $staff_lname=$_POST["staff_lname"];
     $staff_address=$_POST["staff_address"];
     $staff_contactno=$_POST["staff_contactno"];
-    $staff_address=$_POST["staff_address"];
-    $staff_position=$_POST["staff_address"];
+    $staff_position=$_POST["staff_position"];
 
     do {
         if(empty($staff_fname) || empty($staff_lname) || empty($staff_contactno) || empty($staff_address) || empty($staff_position)) 
@@ -152,7 +151,7 @@ else{
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/KaffeMariaTrial/home.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="/kaffemariadb/staff.php" role="button">Cancel</a>
                 </div>
             </div>  
         </form>  

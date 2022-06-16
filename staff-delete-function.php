@@ -1,6 +1,6 @@
 <?php
 if(isset($_GET['staffID'])){
-    $supplier_ID = $_GET['staffID'];
+    $staffID = $_GET['staffID'];
 
     require 'condb.php';
     
