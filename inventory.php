@@ -28,7 +28,7 @@ require 'condb.php';
                 <li><a href="">POS</a></li>
                 <li><a href="">SALES</a></li>
                 <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
-                <li><a href="">LOGOUT</a></li>
+                <li><a href="/kaffemariadb/logout.php">LOGOUT</a></li>
 
             </ul>
         </div>
@@ -37,8 +37,8 @@ require 'condb.php';
     <div class="bigside">
         <div class="container my-5" style="margin:66px;">
             <h1>Inventory Table</h1>
-            <a class="btn btn-primary" href="/kaffemariadb/inventoryIngredient-edit.php" role="button">Add Ingredient</a><br><br>
-            <a class="btn btn-primary" href="/kaffemariadb/inventoryItem-edit.php" role="button">Add Items</a>
+            <a class="btn btn-primary" href="/kaffemariadb/inventoryIngredient-create.php" role="button">Add Ingredient</a><br><br>
+            <a class="btn btn-primary" href="/kaffemariadb/inventoryItem-create.php" role="button">Add Items</a>
     
         </div>
         <table class="table-ingredient" style="margin:66px;">
@@ -82,8 +82,8 @@ require 'condb.php';
                     <td>".$row["ingredient_price"]. "</td>
                     <td>".$row["ingredient_expiry"]. "</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/edit.php?supplier_ID=$row[ingredient_ID]'>Edit</a>
-                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/delete.php?supplier_ID=$row[ingredient_ID]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/inventoryIngredient-edit.php?ingredient_ID=$row[ingredient_ID]'>Edit</a>
+                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/inventoryIngredient-delete.php?ingredient_ID=$row[ingredient_ID]'>Delete</a>
                     </td>
                 </tr>";
                 }
@@ -133,8 +133,8 @@ require 'condb.php';
                     <td>".$row["item_size"]. "</td>
                     <td>".$row["item_description"]. "</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/edit.php?supplier_ID=$row[item_No]'>Edit</a>
-                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/delete.php?supplier_ID=$row[item_No]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/edit.php?item_No=$row[item_No]'>Edit</a>
+                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/delete.php?item_No=$row[item_No]'>Delete</a>
                     </td>
                 </tr>";
                 }
