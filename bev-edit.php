@@ -39,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 }
 
 else{
-    $beverage_flavor=$row["beverage_flavor"];
-    $beverage_qty=$row["beverage_qty"];
-    $beverage_size=$row["beverage_size"];
-    $beverage_price=$row["beverage_price"];
-    $payment_method=$row["payment_method"];
+    $beverage_flavor=$_POST["beverage_flavor"];
+    $beverage_qty=$_POST["beverage_qty"];
+    $beverage_size=$_POST["beverage_size"];
+    $beverage_price=$_POST["beverage_price"];
+    $payment_method=$_POST["payment_method"];
 
     do {
         if(empty($beverage_flavor) || empty($beverage_qty) || empty($beverage_size) || empty($beverage_price) || empty($payment_method)) 
