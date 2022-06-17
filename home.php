@@ -29,7 +29,7 @@ require 'condb.php';
                 <li><a href="">POS</a></li>
                 <li><a href="">SALES</a></li>
                 <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
-                <li><a href="">LOGOUT</a></li>
+                <li><a href="/kaffemariadb/logout.php">LOGOUT</a></li>
 
             </ul>
         </div>
