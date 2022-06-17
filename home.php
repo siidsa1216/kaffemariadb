@@ -17,7 +17,7 @@ include 'include/head.html';
                     <div class="col p-3 m-3 bg-primary text-white">ITEMS <br><br>(No. of Beverages Available)</div>
                 </div>
                 <div class="row">
-                <div class="col p-3 m-3 bg-primary text-white">EMPLOYEE <br><br>(No. of Beverages Available)</div>
+                <div class="col p-3 m-3 bg-primary text-white">STAFF <br><br>(No. of Beverages Available)</div>
                     <div class="col p-3 m-3 bg-dark text-white">SUPPLIERS <br><br>(No. of Beverages Available)</div>
                     <div class="col p-3 m-3 bg-primary text-white">SALES <br><br>(No. of Beverages Available)</div>
                 </div>
