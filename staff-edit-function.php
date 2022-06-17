@@ -43,8 +43,7 @@ else{
     $staff_lname=$_POST["staff_lname"];
     $staff_address=$_POST["staff_address"];
     $staff_contactno=$_POST["staff_contactno"];
-    $staff_address=$_POST["staff_address"];
-    $staff_position=$_POST["staff_address"];
+    $staff_position=$_POST["staff_position"];
 
     do {
         if(empty($staff_fname) || empty($staff_lname) || empty($staff_contactno) || empty($staff_address) || empty($staff_position)) 
