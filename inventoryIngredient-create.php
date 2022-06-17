@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Ingredient Description</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="ingredient_description" value="<?php echo $ingredient_description; ?>">
+                    <input type="date" class="form-control" name="ingredient_description" value="<?php echo $ingredient_description; ?>">
                 </div>
             </div>
             <div class="row mb-3">
