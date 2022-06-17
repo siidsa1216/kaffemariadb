@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     $staffID = $_GET['staffID'];
 
-    $sql = "SELECT * FROM supplier WHERE supplier_ID=$staffID";
+    $sql = "SELECT * FROM staff WHERE staffID=$staffID";
     $result= $connection->query($sql);
     $row = $result->fetch_assoc();
 
