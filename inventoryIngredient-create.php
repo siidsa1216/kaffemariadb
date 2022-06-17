@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Ingredient Description</label>
                 <div class="col-sm-6">
-                    <input type="date" class="form-control" name="ingredient_description" value="<?php echo $ingredient_description; ?>">
+                    <input type="text" class="form-control" name="ingredient_description" value="<?php echo $ingredient_description; ?>">
                 </div>
             </div>
             <div class="row mb-3">
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Ingredient Expiration Date</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>">
+                    <input type="date" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>">
                 </div>
             </div>
             
