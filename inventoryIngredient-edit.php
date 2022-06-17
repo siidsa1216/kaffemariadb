@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "Ingredient added successfully!";
         
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/inventory.php");
         exit;
 
     }while(false);
@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/kaffemariadb/home.php" role="button">Cancel</button></a>
+                    <a class="btn btn-outline-primary" href="/kaffemariadb/inventory.php" role="button">Cancel</button></a>
                 </div>
             </div>  
         </form>  
