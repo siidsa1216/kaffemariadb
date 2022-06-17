@@ -1,59 +1,63 @@
 <?php
 require 'condb.php';
 
-$supplier_ID="";
-$supplier_fname="";
-$supplier_mname="";
-$supplier_lname="";
-$supplier_ContactNo="";
-$supplier_address="";
+$staffID="";
+$staff_fname="";
+$staff_mname="";
+$staff_lname="";
+$staff_address="";
+$staff_contactno="";
+$staff_position="";
 
 $errorMessage = "";
 $successMessage = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
-    if(!isset($_GET['supplier_ID'])){
-        header("location:/kaffemariadb/home.php");
+    if(!isset($_GET['staffID'])){
+        header("location:/kaffemariadb/staff.php");
         exit;
     }
 
-    $supplier_ID = $_GET['supplier_ID'];
+    $staffID = $_GET['staffID'];
 
-    $sql = "SELECT * FROM supplier WHERE supplier_ID=$supplier_ID";
+    $sql = "SELECT * FROM supplier WHERE supplier_ID=$staffID";
     $result= $connection->query($sql);
     $row = $result->fetch_assoc();
 
     if(!$row){
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/staff.php");
         exit;
     }
 
-    $supplier_fname=$row["supplier_fname"];
-    $supplier_mname=$row["supplier_mname"];
-    $supplier_lname=$row["supplier_lname"];
-    $supplier_ContactNo=$row["supplier_ContactNo"];
-    $supplier_address=$row["supplier_address"];
+    $staff_fname=$row["staff_fname"];
+    $staff_mname=$row["staff_mname"];
+    $staff_lname=$row["staff_lname"];
+    $staff_address=$row["staff_address"];
+    $staff_contactno=$row["supplier_contactno"];
+    $staff_position=$row["staff_address"];
 
 }
 else{
-    $supplier_fname=$_POST["supplier_fname"];
-    $supplier_mname=$_POST["supplier_mname"];
-    $supplier_lname=$_POST["supplier_lname"];
-    $supplier_ContactNo=$_POST["supplier_ContactNo"];
-    $supplier_address=$_POST["supplier_address"];
+    $staff_fname=$_POST["staff_fname"];
+    $staff_mname=$_POST["staff_mname"];
+    $staff_lname=$_POST["staff_lname"];
+    $staff_address=$_POST["staff_address"];
+    $staff_contactno=$_POST["staff_contactno"];
+    $staff_address=$_POST["staff_address"];
+    $staff_position=$_POST["staff_address"];
 
     do {
-        if(empty($supplier_fname) || empty($supplier_lname) || empty($supplier_ContactNo) || empty($supplier_address)) 
+        if(empty($staff_fname) || empty($staff_lname) || empty($staff_contactno) || empty($staff_address) || empty($staff_position)) 
         {
             $errorMessage = "Please fill up the required fields";
         break;        
         } 
         
-        $supplier_ID = $_GET['supplier_ID'];
+        $staffID = $_GET['staffID'];
 
-        $sql = "UPDATE supplier ".
-        "SET supplier_fname = '$supplier_fname', supplier_mname = '$supplier_mname',  supplier_lname= '$supplier_lname', supplier_ContactNo='$supplier_ContactNo', supplier_address='$supplier_address' ".
-        "WHERE supplier_ID=$supplier_ID ";
+        $sql = "UPDATE staff ".
+        "SET staff_fname = '$staff_fname', staff_mname = '$staff_mname',  staff_lname= '$staff_lname', staff_contactno='$staff_contactno', staff_address='$staff_address', staff_position='$staff_position' ".
+        "WHERE staffID=$staffID ";
         
         $result= $connection->query($sql);
 
@@ -62,9 +66,9 @@ else{
             $errorMessage ="Invalid query: ". $connection->error;
             break;      
         } 
-        $successMessage = "Supplier updated successfully!";
+        $successMessage = "Staff updated successfully!";
 
-        header("location:/kaffemariadb/home.php");
+        header("location:/kaffemariadb/staff.php");
         exit;
     }while(false);
 
@@ -83,7 +87,7 @@ else{
 </head>
 <body>
     <div class="container my-5">
-        <h2>New Supplier</h2>
+        <h2>Staff List</h2>
 
         <?php
         if (!empty($errorMessage)){
@@ -96,37 +100,44 @@ else{
 
         ?>
         <form method = 'POST'>
-            <input type="hidden" name="supplier_ID" value="<?php echo $supplier_ID; ?>">
+            <input type="hidden" name="staffID" value="<?php echo $staffID; ?>">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">First Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="supplier_fname" value="<?php echo $supplier_fname; ?>">
+                    <input type="text" class="form-control" name="staff_fname" value="<?php echo $staff_fname; ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Middle Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="supplier_mname" value="<?php echo $supplier_mname; ?>">
+                    <input type="text" class="form-control" name="staff_mname" value="<?php echo $staff_mname; ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Last Name</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="supplier_lname" value="<?php echo $supplier_lname; ?>">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Contact No.</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="supplier_ContactNo" value="<?php echo $supplier_ContactNo; ?>">
+                    <input type="text" class="form-control" name="staff_lname" value="<?php echo $staff_lname; ?>">
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Address</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="supplier_address" value="<?php echo $supplier_address; ?>">
+                    <input type="text" class="form-control" name="staff_address" value="<?php echo $staff_address; ?>">
                 </div>
             </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Contact No.</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="staff_contactno" value="<?php echo $staff_contactno; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">Position</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="staff_position" value="<?php echo $staff_position; ?>">
+                </div>
+            </div>
+
             <?php
             if (!empty($successMessage)){
                 echo"

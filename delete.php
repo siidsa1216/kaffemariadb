@@ -7,7 +7,7 @@ if(isset($_GET['supplier_ID'])){
     $sql = "DELETE FROM supplier WHERE supplier_ID = $supplier_ID";
     $connection->query($sql);
 
-    header("location:/KaffeMariaTrial/home.php");
+    header("location:/kaffemariadb/home.php");
     exit;
 
 }

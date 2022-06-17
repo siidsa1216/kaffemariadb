@@ -2,6 +2,7 @@
 require 'condb.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,11 +14,15 @@ require 'condb.php';
 </head>
 
 <body>
+    <div class="topbar">
+        <h1>logo</h1>
+        <h1 style="margin-left:1250px;">profile</h1>
 
+    </div>
     <div class="sidebar">
         <div class="buttonsss">
             <ul>
-                <li><a href="/kaffemariadb/home1.html">HOME</a></li>
+            <li><a href="/kaffemariadb/home1.html">HOME</a></li>
                 <li><a href="/kaffemariadb/bev.php">BEVERAGE</a></li>
                 <li><a href="/kaffemariadb/inventory.php">INVENTORY</a></li>
                 <li><a href="/kaffemariadb/staff.php">EMPLOYEE</a></li>
@@ -32,19 +37,19 @@ require 'condb.php';
     <div>
     <div class="bigside">
         <div class="container my-5" style="margin:66px;">
-            <h1>Beverage Table</h1>
-            <a class="btn btn-primary" href="/KaffeMariaTrial/create.php" role="button">Add Supplier</a>
+            <h1>Staff</h1>
+            <a class="btn btn-primary" href="/kaffemariadb/staff-add-function.php" role="button">Add Staff</a>
     
         </div>
         <table class="table" style="margin:66px;">
             <thead>
-                <th>Beverage No.</th>
-                <th>Flavor</th>
-                <th>Quantity</th>
-                <th>Size</th>
-                <th>Price</th>
-                <th>Payment Method</th>
-                <th>Action</th>
+                <th>Staff ID</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Contact No.</th>
+                <th>Position</th>
             </thead>
     
             <tbody>
@@ -55,7 +60,7 @@ require 'condb.php';
                 $database="kaffemariadb"; //name y=of your db
     
                 //create connection
-                $connection = new mysqli($servername,  $username, $password, $database);
+                $connection = new mysqli($servername, $username, $password, $database);
                 
                 if ($connection->connect_error){
                     die("connection failed: ". $$connection->connect_error);
@@ -63,7 +68,7 @@ require 'condb.php';
     
                 //read all data inn the table
     
-                $sql = "SELECT * FROM beverage";
+                $sql = "SELECT * FROM staff";
                 $result= $connection->query($sql);
     
                 if (!$result){
@@ -72,15 +77,16 @@ require 'condb.php';
     
                 while($row =$result->fetch_assoc()){
                     echo "<tr>
-                    <td>".$row["beverage_No"]. "</td>
-                    <td>".$row["beverage_flavor"]. "</td>
-                    <td>".$row["beverage_qty"]. "</td>
-                    <td>".$row["beverage_size"]. "</td>
-                    <td>".$row["beverage_price"]. "</td>
-                    <td>".$row["payment_method"]. "</td>
+                    <td>".$row["staffID"]. "</td>
+                    <td>".$row["staff_fname"]. "</td>
+                    <td>".$row["staff_mname"]. "</td>
+                    <td>".$row["staff_lname"]. "</td>
+                    <td>".$row["staff_address"]. "</td>
+                    <td>".$row["staff_contactno"]. "</td>
+                    <td>".$row["staff_position"]. "</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/KaffeMariaTrial/edit.php?beverage_No=$row[beverage_No]'>Edit</a>
-                        <a class='btn btn-danger btn-sm' href='/KaffeMariaTrial/delete.php?beverage_No=$row[beverage_No]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/staff-edit-function.php?staffID=$row[staffID]'>Edit</a>
+                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/staff-delete-function.php?staffID=$row[staffID]'>Delete</a>
                     </td>
                 </tr>";
                 }

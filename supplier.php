@@ -24,7 +24,7 @@ require 'condb.php';
             <li><a href="/kaffemariadb/home1.html">HOME</a></li>
                 <li><a href="/kaffemariadb/bev.php">BEVERAGE</a></li>
                 <li><a href="/kaffemariadb/inventory.php">INVENTORY</a></li>
-                <li><a href="">EMPLOYEE</a></li>
+                <li><a href="/kaffemariadb/staff.php">EMPLOYEE</a></li>
                 <li><a href="">POS</a></li>
                 <li><a href="">SALES</a></li>
                 <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
@@ -83,8 +83,8 @@ require 'condb.php';
                     <td>".$row["supplier_ContactNo"]. "</td>
                     <td>".$row["supplier_address"]. "</td>
                     <td>
-                        <a class='btn btn-primary btn-sm' href='/KaffeMariaTrial/edit.php?supplier_ID=$row[supplier_ID]'>Edit</a>
-                        <a class='btn btn-danger btn-sm' href='/KaffeMariaTrial/delete.php?supplier_ID=$row[supplier_ID]'>Delete</a>
+                        <a class='btn btn-primary btn-sm' href='/kaffemariadb/edit.php?supplier_ID=$row[supplier_ID]'>Edit</a>
+                        <a class='btn btn-danger btn-sm' href='/kaffemariadb/delete.php?supplier_ID=$row[supplier_ID]'>Delete</a>
                     </td>
                 </tr>";
                 }
