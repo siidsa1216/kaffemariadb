@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $staff_mname=$row["staff_mname"];
     $staff_lname=$row["staff_lname"];
     $staff_address=$row["staff_address"];
-    $staff_contactno=$row["supplier_contactno"];
+    $staff_contactno=$row["staff_contactno"];
     $staff_position=$row["staff_address"];
 
 }
