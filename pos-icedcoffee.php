@@ -57,15 +57,29 @@ include 'include/pos-sidebar.html';
                 </div>
             
                 <div class="col-lg-6">
-                    <div class="container bg-white p-3">
-                    <table class="table text-center">
-                        <thead>
-                            <th>Beverage Name</th>
-                            <th>Beverage Flavor</th>
-                            <th>Beverage Quantity</th>
-                            <th>Beverage Price</th>
-                        </thead>
-                    </table>
+                    <div class="row">
+                        <div class="container bg-white p-3">
+                        <table class="table text-center">
+                            <thead>
+                                <th>Beverage Name</th>
+                                <th>Beverage Flavor</th>
+                                <th>Beverage Quantity</th>
+                                <th>Beverage Price</th>
+                             
+                            </thead>
+                        </table>
+                        </div>
+                    </div>
+                    <br><br>
+                                <br><br>
+                                <br><br>
+                                <br><br>
+                                <br><br>
+                                <br><br>
+                    <div class="row">
+                        <div class="container bg-white p-3">
+                            <h4>Total:</h4>
+                        </div>
                     </div>
                 </div>
             </div>
