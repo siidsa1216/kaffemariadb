@@ -27,7 +27,7 @@ function check_login($connection)
 
 function random_num($length){
     $text = "";
-    if(length < 5){
+    if($length < 5){
         $length = 5;
     }
     $len = rand(4,$length);
