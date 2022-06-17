@@ -22,6 +22,7 @@ include 'include/head.html';
                 <th>Address</th>
                 <th>Contact No.</th>
                 <th>Position</th>
+                <th>Action</th>
             </thead>
     
             <tbody>

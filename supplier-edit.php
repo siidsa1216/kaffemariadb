@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $row = $result->fetch_assoc();
 
     if(!$row){
-        header("location:/kaffemariadb/supplier.php");
+        header("location:/kaffemariadb/home.php");
         exit;
     }
 

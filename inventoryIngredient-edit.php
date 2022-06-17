@@ -104,7 +104,7 @@ else{
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Ingredient Expiration Date</label>
                 <div class="col-sm-6">
-                    <input type="date" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>">
+                    <input type="text" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>">
                 </div>
             </div>
             

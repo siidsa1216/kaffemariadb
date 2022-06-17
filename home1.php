@@ -20,7 +20,7 @@ require 'condb.php';
      <li><a href="/kaffemariadb/home1.php">HOME</a></li>
                 <li><a href="">PRODUCT</a></li>
                 <li><a href="/kaffemariadb/inventory.php">INVENTORY</a></li>
-                <li><a href="/kaffemariadb/staff.php">STAFF</a></li>
+                <li><a href="/kaffemariadb/staff.php">EMPLOYEE</a></li>
                 <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
                 <li><a href="/kaffemariadb/logout.php">LOGOUT</a></li>
 
