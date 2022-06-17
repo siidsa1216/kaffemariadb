@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $ingredient_description=$_POST["ingredient_description"];
     $ingredient_price=$_POST["ingredient_price"];
     $ingredient_expiry=$_POST["ingredient_expiry"];
+
     
     do {
         if(empty($ingredient_name) || empty($ingredient_description) || empty($ingredient_price) || empty($ingredient_expiry)) 
@@ -37,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $ingredient_description="";
         $ingredient_price="";
         $ingredient_expiry="";
-
         $successMessage = "Ingredient added successfully!";
         
         header("location:/kaffemariadb/inventory.php");
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Ingredient Expiration Date</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>">
+                    <input type="date" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>">
                 </div>
             </div>
             
