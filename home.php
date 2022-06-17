@@ -10,7 +10,7 @@ include 'include/head.html';
         <div class="container my-5" style="margin:66px;">
             <h1>WELCOME ADMIN "NAME"!</h1>
         </div>
-            <div class="container-fluid mt-3">
+            <div class="container-fluid mt-3 text-center">
                 <div class="row">
                     <div class="col p-3 m-3 bg-primary text-white">BEVERAGE <br><br><?php 
                         $query = "SELECT COUNT(*) FROM beverage WHERE beverage_No=beverage_No";

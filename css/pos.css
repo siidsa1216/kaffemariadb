@@ -11,7 +11,7 @@ body{
     height: 100vh;
     position: fixed;
 }
-.bigside{
+.bigside1{
     background-color: rgb(255, 255, 255);
     width:85%;
     height: 100vh;
@@ -19,6 +19,13 @@ body{
     align-items: center;
     margin: auto;
 
+}
+.bigside{
+    background-color: rgb(231, 216, 216);
+    width:85%;
+    height: 100vh;
+    align-items: center;
+    margin-left: 15%;
 }
 .buttonsss{
     align-items: center;
@@ -44,4 +51,8 @@ body{
 }
 img{
     border-radius: 10px;
+}
+.container{
+    border-radius: 10px;
+    height: 100%;
 }

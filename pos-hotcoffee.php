@@ -12,13 +12,12 @@ include 'include/pos-sidebar.html';
         <style div class="hotcoffee-container">
         
         body{
-            background-color:#F3E3D3;
+            background-color:white;
         }
         .hotcoffee-container{
             margin:200px;
             margin-top:150px;
             margin-left:320px;
-            border-radius:500px;
         }
         .coffee1{
             margin-top:30px;
@@ -52,19 +51,19 @@ include 'include/pos-sidebar.html';
 <div class="hotcoffee-container">
     <div class="coffee1">
         <a href="/kaffemariadb/home.php">
-        <img src="/kaffemariadb/img/iced-americano.jpg" style="width:180px; height:180px;"></a>
+        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px;"></a>
     </div>
     <div class="coffee2">
         <a href="/kaffemariadb/home.php">
-        <img src="/kaffemariadb/img/iced-americano.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
+        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
     </div>
     <div class="coffee3">
         <a href="/kaffemariadb/home.php">
-        <img src="/kaffemariadb/img/iced-americano.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
+        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
     </div>
     <div class="coffee4">   
         <a href="/kaffemariadb/home.php">
-        <img src="/kaffemariadb/img/iced-americano.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
+        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
     </div>
 </div>
 

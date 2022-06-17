@@ -5,7 +5,7 @@ include 'include/pos-head.html';
 ?>
 <body>
     <div>
-    <div class="bigside">
+    <div class="bigside1">
         <div class="container my-1">
             <h1>Welcome!</h1>
         </div>
