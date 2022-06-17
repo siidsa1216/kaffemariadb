@@ -152,7 +152,7 @@ else{
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/KaffeMariaTrial/home.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="/kaffemariadb/staff.php" role="button">Cancel</a>
                 </div>
             </div>  
         </form>  
