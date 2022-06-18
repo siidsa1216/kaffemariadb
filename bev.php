@@ -3,12 +3,14 @@ require 'condb.php';
 include 'include/sidebar.html';
 include 'include/topbar.html';
 include 'include/head.html';
+include 'bev-create.php';
+
 ?>
 <body>
     <div class="bigside">
-        <div class="container my-5" style="margin:20px;">
+        <div class="container" style="margin:20px;">
             <h1>Beverage Table</h1>
-            <a class="btn btn-primary" href="/kaffemariadb/bev-create.php" role="button">Add Beverage</a>
+            <a class="btn btn-primary" role="button" class="open-button" onclick="openForm()">Add Beverage</a>
         </div>
         <table class="table">
             <thead>
@@ -50,7 +52,75 @@ include 'include/head.html';
                 ?>
             </tbody>
         </table>
-    </div>   
+    </div> 
+
+    <!--POPUP FORM FOR ADD BEVERAGE-->
+    <div class="container" id="newbev">
+    <center>
+        <h1>New Beverage</h1>
+         <form method = 'POST' id='pop-upform'>
+            <input type="hidden" name="beverage_No" value="<?php echo $beverage_No; ?>">
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Flavor</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="beverage_flavor" value="<?php echo $beverage_flavor; ?>" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Quantity</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="beverage_qty" value="<?php echo $beverage_qty; ?>" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Size</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="beverage_size" value="<?php echo $beverage_size; ?>" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Price</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="beverage_price" value="<?php echo $beverage_price; ?>" required>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Payment</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="payment_method" value="<?php echo $payment_method; ?>"required>
+                </div>
+            </div>
+
+            <?php
+            ?>
+             <div class="row mb-3">
+                <div class="col-sm-6 d-grid">
+                    <button type="submit" onclick="JSalert()" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-6 d-grid">
+                    <a class="btn btn-outline-primary" onclick="closeForm()" role="button">Cancel</a>
+                </div>
+            </div>  
+        </form> 
+        </center> 
+            </div>
+           
+
+    <script>
+        function openForm() {
+        document.getElementById("newbev").style.display = "block";
+        }
+
+        function closeForm() {
+        document.getElementById("newbev").style.display = "none";
+        }
+        </script>
+
+        <script type="text/javascript">
+             function JSalert() {
+	    alert("Successfully added.");
+    }
+
+        </script>
 </body>
->>>>>>> Stashed changes
 </html>
