@@ -76,8 +76,6 @@ include 'include/pos-sidebar.html';
     <label style="margin-left:50px;">Beverage Price</label>
 </div>
 
-
-
 </body>
 </head>
 </html>
