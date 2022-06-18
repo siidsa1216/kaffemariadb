@@ -3,13 +3,10 @@ require 'condb.php';
 include 'include/pos-topbar.html';
 include 'include/pos-head.html';
 ?>
-
 <body>
     <div class="bigside1">
-        <div class="container my-1">
-            <h1>Welcome!</h1>
-        </div>
-        <div class="container-fluid bg-light">
+        <h1>Welcome!</h1>
+    <div class="container-fluid bg-light">
             <div class="row m-2">
                 <div class="col  p-1 m-2 text-black text-center">
                     <picture>
@@ -31,6 +28,7 @@ include 'include/pos-head.html';
                 </div>
             </div>
         </div>
+     
     </div>
 </body>
 </html>
