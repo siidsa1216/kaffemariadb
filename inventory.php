@@ -73,27 +73,27 @@ include 'inventoryItem-create.php';
          <form method = 'POST' id='pop-upform'>
             <input type="hidden" name="ingredient_ID" value="<?php echo $ingredient_ID; ?>">
             <div class="row mb-3">
-                <label class="col-sm-5 col-form-label">Flavor</label>
+                <label class="col-sm-5 col-form-label">Ingredient Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="ingredient_name" value="<?php echo $ingredient_name; ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-5 col-form-label">Quantity</label>
+                <label class="col-sm-5 col-form-label">Description</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="ingredient_description" value="<?php echo $ingredient_description; ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-5 col-form-label">Size</label>
+                <label class="col-sm-5 col-form-label">Ingredient Price</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="ingredient_price" value="<?php echo $ingredient_price; ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-5 col-form-label">Price</label>
+                <label class="col-sm-5 col-form-label">Expiration Date</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>" required>
+                    <input type="date" class="form-control" name="ingredient_expiry" value="<?php echo $ingredient_expiry; ?>" required>
                 </div>
             </div>
 
