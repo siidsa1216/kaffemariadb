@@ -69,7 +69,7 @@ include 'bev-create.php';
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Quantity</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="beverage_qty" value="<?php echo $beverage_qty; ?>" required>
+                    <input type="number" class="form-control" name="beverage_qty" value="<?php echo $beverage_qty; ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
