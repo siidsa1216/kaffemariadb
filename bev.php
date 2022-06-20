@@ -20,6 +20,7 @@ include 'bev-create.php';
                 <th>Size</th>
                 <th>Price</th>
                 <th>Payment Method</th>
+                <th>Category</th>
                 <th>Action</th>
             </thead>
     
@@ -42,6 +43,7 @@ include 'bev-create.php';
                     <td>".$row["beverage_size"]. "</td>
                     <td>".$row["beverage_price"]. "</td>
                     <td>".$row["payment_method"]. "</td>
+                    <td>".$row["category_ID"]. "</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='/kaffemariadb/bev-edit.php?beverage_No=$row[beverage_No]'>Edit</a>
                         <a class='btn btn-danger btn-sm' href='/kaffemariadb/bev-delete.php?beverage_No=$row[beverage_No]'>Delete</a>

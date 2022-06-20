@@ -8,7 +8,7 @@ $beverage_qty="";
 $beverage_size="";
 $beverage_price="";
 $payment_method="";
-
+$category_ID="";
 
 $errorMessage = "";
 $successMessage = "";
@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
     $beverage_size= $row["beverage_size"];
     $beverage_price= $row["beverage_price"];
     $payment_method= $row["payment_method"];
+    $category_ID= $row["category_ID"];
 
 }
 
@@ -44,9 +45,10 @@ else{
     $beverage_size=$_POST["beverage_size"];
     $beverage_price=$_POST["beverage_price"];
     $payment_method=$_POST["payment_method"];
+    $category_ID=$_POST["category_ID"];
 
     do {
-        if(empty($beverage_flavor) || empty($beverage_qty) || empty($beverage_size) || empty($beverage_price) || empty($payment_method)) 
+        if(empty($beverage_flavor) || empty($beverage_qty) || empty($beverage_size) || empty($beverage_price) || empty($payment_method) || empty($category_ID)) 
         {
             $errorMessage = "Please fill up the required fields";
         break;        
@@ -54,7 +56,7 @@ else{
 
         $beverage_No = $_GET['beverage_No'];
 
-        $sql = "UPDATE beverage SET beverage_flavor = '$beverage_flavor', beverage_qty = '$beverage_qty',  beverage_size= '$beverage_size', beverage_price='$beverage_price', payment_method='$payment_method'
+        $sql = "UPDATE beverage SET beverage_flavor = '$beverage_flavor', beverage_qty = '$beverage_qty',  beverage_size= '$beverage_size', beverage_price='$beverage_price', payment_method='$payment_method', category_ID='$category_ID'
         WHERE beverage_No=$beverage_No";
 
         $result= $connection->query($sql);
@@ -117,6 +119,12 @@ else{
                 <label class="col-sm-3 col-form-label">payment_method</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="payment_method" value="<?php echo $payment_method; ?>">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-3 col-form-label">category_ID</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" name="category_ID" value="<?php echo $category_ID; ?>">
                 </div>
             </div>
 
