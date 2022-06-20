@@ -152,17 +152,19 @@ include 'include/pos-sidebar.html';
                                             <img src="/kaffemariadb/img/hot-coffee.jpg" onclick="Americano()" style="width:150px; height:150px;">
                                         </div>
                                     </div>  
+                                </div>
                                 <div class="row m-3">
-                                <div class="col-lg-4">
+                                    <div class="col-lg-4">
                                         <div class="coffee4">
                                             <img src="/kaffemariadb/img/hot-coffee.jpg" onclick="Americano()" style="width:150px; height:150px;"></a>
                                         </div>
                                     </div>
                                 </div>
                                 
-                            </div>
+
                     </div>
                 </div>
+
                 <div class="form-popup" id="myForm">
                 <form action="try.php" class="form-container" method="POST">
                 <h1>Hot Coffee Americano</h1>
@@ -200,7 +202,8 @@ include 'include/pos-sidebar.html';
     
                     <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
                 </form>
-                </div>
+    </div>
+    
             
                 <div class="col-lg-6">
                     <div class="row">

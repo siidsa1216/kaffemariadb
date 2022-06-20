@@ -191,14 +191,10 @@ include 'include/pos-sidebar.html';
             </select>
         </div>
         <div class="from-group">
-                <label for="">Beverage Quantity</label>
-            <select name="beverage_qty" class="form-control">
-                <option  value="1">1</option>
-                <option  value="2">2</option>
-                <option  value="3">3</option>
-                <option  value="4">4</option>
-                <option  value="5">5</option>
-            </select>
+                <label class="control-label">Enter Quantity</label>
+            <div class="controls">
+                <input type="text" name="beverage_qty" value="0">
+            </div>
         </div>
         <div class="from-group">
                 <label for="">Payment Method</label>
@@ -220,8 +216,7 @@ include 'include/pos-sidebar.html';
 
 
     <div class="coffee2">
-        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
-        
+        <img src="/kaffemariadb/img/hot-coffee.jpg" onclick="Americano()" style="width:180px; height:180px;" ></img>
     </div>
 
 
@@ -236,6 +231,9 @@ include 'include/pos-sidebar.html';
 </div>
 </form>
 
+
+
+ 
 
 
 
@@ -272,6 +270,7 @@ function closeForm() {
                 <th>Beverage Name</th>
                 <th>Beverage Size</th>
                 <th>Beverage Quantity</th>
+                <th>Beverage Price</th>
                 <th>Payment Method</th>
             </thead>
     
@@ -299,7 +298,7 @@ function closeForm() {
     
                 //read all data inn the table
     
-                $sql = "SELECT s.*, b.beverage_name AS bname FROM sales s, beverage_name b WHERE b.beverage_name_id = 1";
+                $sql = "SELECT s.*, b.beverage_name AS bname FROM sales s, beverage_name b WHERE b.beverage_name_id = 2";
                 $result= $connection->query($sql);
     
                 if (!$result){
@@ -311,6 +310,7 @@ function closeForm() {
                     <td>".$row["bname"]. "</td>
                     <td>".$row["beverage_size"]. "</td>
                     <td>".$row["beverage_qty"]. "</td>
+                    <td>".$row["beverage_price"]. "</td>
                     <td>".$row["payment_method"]. "</td>
                     <td>
                     <a class='btn btn-danger btn-sm' href='/kaffemariadb/pos-hotcoffee-delete.php?sales_ID=$row[sales_ID]'>Delete</a>
@@ -318,6 +318,7 @@ function closeForm() {
                 </tr>";
                 }
                 ?>
+
 
 
 </body>
