@@ -1,47 +1,40 @@
 <?php
- session_start();
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database="kaffemariadb"; //name y=of your db 
 
- include("condb.php");
- include("functions.php");
+$connection = new mysqli($servername,  $username, $password, $database); 
 
- if($_SERVER['REQUEST_METHOD']== "POST")
- {
-     //something was posted
-     $user_name = $_POST['user_name'];
-     $password = $_POST['password'];
+if(!$connection = mysqli_connect($servername,  $username, $password, $database))
+{
+    die("Connection Failes". mysqli_connect_error());
+}
 
-     if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
-     {
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $user_name=$_POST["user_name"];
+    $password=$_POST["password"];
 
-         //read from db
-         
-        $query = "select * from users where user_name = '$user_name' limit 1";
+    $sql="SELECT * FROM user WHERE user_name= '".$user_name."' AND  password= '".$password."' ";
 
-        $result = mysqli_query($connection, $query);
+    $result=mysqli_query($connection,$sql);
 
-        if($result)
-        {
-            if($result && mysqli_num_rows($result) > 0)
-            {
+    $row=mysqli_fetch_array($result);
 
-                $user_data = mysqli_fetch_assoc($result);
-                
-                if($user_data['password'] === $password);
-                {
-                    $_SESSION['user_id'] = $user_data['user_id'];
-                    header("Location: home.php");
-                    die;
-                }
-            }
-        }
-        echo "Login failed. Please enter your correct password and username.";   
-     }else
-     {
-         echo "Please enter some valid information!";
-     }
- }
- ?>
+    if($row["user_type"]=="user"){
+        header("Location:pos.php");
+    }
 
+    if($row["user_type"]=="admin"){
+        header("Location:home.php");
+    }
+
+    else{
+        echo"username or password is incorrect!";
+    }
+    
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,18 +80,24 @@
     }
     </style>
     
-    <div id="box">
+<div id="box">
+    <form action="#" method="POST">
 
-        <form method="post">
-            <div style="font-size: 20px;margin: 10px;color: white;text-align: center;">Login</div>
+        
+	<div>
+		<label>username</label>
+		<input type="text" name="user_name" required>
+	</div>
 
-            <p>Username: <input id="text" type="text" name="user_name"></p>
-            <p>Password: <input id="text" type="password" name="password"></p>
+	<div>
+		<label>password</label>
+		<input type="password" name="password" required>
+	</div>
 
-            <input type="submit" value="Login" style="background: none;color: white;border: none;margin-left: 120px"><br><br>
-
-            <a href="signup.php" style="color: white;margin-left: 100px;" white;="">Click to Signup</a>
-        </form>
-    </div>
+	<div>
+		<input type="submit" value="Login">
+	</div>
+    </form>   
+</div>
 </body>
 </html>
