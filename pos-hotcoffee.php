@@ -221,7 +221,6 @@ include 'include/pos-sidebar.html';
 
     <div class="coffee2">
         <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
-        
     </div>
 
 
