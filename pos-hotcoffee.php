@@ -178,7 +178,7 @@ include 'include/pos-sidebar.html';
 <!--PICTURE 1 POP UP-->
 <div class="hotcoffee-container">
     <div class="coffee1">
-        <img src="/kaffemariadb/img/iced-americano.jpg" onclick="Americano()" style="width:180px; height:180px;" ></img>
+        <img src="/kaffemariadb/img/hot-coffee.jpg" onclick="Americano()" style="width:180px; height:180px;" ></img>
         <div class="form-popup" id="myForm">
   <form action="try.php" class="form-container" method="POST">
     <h1>Hot Coffee Americano</h1>
@@ -216,12 +216,31 @@ include 'include/pos-sidebar.html';
 
   </form>
 </div>
+</div>
+
+
+    <div class="coffee2">
+        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
+        
+    </div>
+
+
+    <div class="coffee3">
+        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
+    </div>
+
+
+    <div class="coffee4">   
+        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
+    </div>
+</div>
+</form>
 
 
 
 
 
-    
+
 <!--POPUP FUNCTION (NOT NEEDED ATA)-->
 <script>
 function Americano() {
@@ -232,23 +251,6 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 </script>
-    </div>
-    <div class="coffee2">
-        <a href="/kaffemariadb/home.php">
-        <img src="/kaffemariadb/img/iced-americano.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
-    </div>
-    <div class="coffee3">
-        <a href="/kaffemariadb/home.php">
-        <img src="/kaffemariadb/img/iced-americano.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
-    </div>
-    <div class="coffee4">   
-        <a href="/kaffemariadb/home.php">
-        <img src="/kaffemariadb/img/iced-americano.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
-    </div>
-</div>
-</form>
-
-
 
 
 
