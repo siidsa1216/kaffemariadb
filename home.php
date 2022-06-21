@@ -1,7 +1,7 @@
 <?php
 require 'condb.php';
 include 'include/sidebar.html';
-include 'include/topbar.php';
+include 'include/pos-topbar-admin.php';
 include 'include/head.html';
 ?>
 <body>
