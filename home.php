@@ -51,7 +51,13 @@ include 'include/head.html';
                             echo "$row[0]";
                           }
                         ?> Record(s)</div>
-                    <div class="col p-3 m-3 bg-primary text-white">SALES <br><br>(No. of Beverages Available)</div>
+                    <div class="col p-3 m-3 bg-primary text-white">SALES <br><br><?php 
+                        $query = "SELECT COUNT(*) FROM sales WHERE sales_ID=sales_ID";
+                        $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
+                        while ($row = mysqli_fetch_array($result)) {
+                            echo "$row[0]";
+                          }
+                        ?> Record(s)</div>
                     <div class="col p-3 m-3 bg-dark  text-white">NUMBER OF USERS <br><br><?php 
                         $query = "SELECT COUNT(*) FROM user WHERE id=id";
                         $result = mysqli_query($connection, $query) or die(mysqli_error($connection));
