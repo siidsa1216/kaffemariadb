@@ -121,7 +121,7 @@ include 'include/pos-sidebar.html';
         }
         .coffee4{
             margin-top:-182px;
-            margin-left:167px;
+            margin-left:180px;
         }
         
     </style>
@@ -161,7 +161,6 @@ include 'include/pos-sidebar.html';
                                     </div>
                                 </div>
                                 
-
                     </div>
                 </div>
 
@@ -196,6 +195,7 @@ include 'include/pos-sidebar.html';
                             </select>
                     </div>
 
+                    <br><br>
                     <div class="from-group">
                         <button type="submit" name="submit" class="btn btn-primar">submit</button>
                     </div>
@@ -262,11 +262,7 @@ function closeForm() {
                         </div>
                     </div>
                     <br><br>
-                                <br><br>
-                                <br><br>
-                                <br><br>
-                                <br><br>
-                                <br><br>
+                                
                     <div class="row">
                         <div class="container bg-white p-3">
                             <h4>Total:</h4>
