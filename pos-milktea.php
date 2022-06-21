@@ -231,9 +231,10 @@ include 'include/pos-sidebar.html';
                 if ($connection->connect_error){
                     die("connection failed: ". $$connection->connect_error);
                 }
-    
+
+       
                 //read all data inn the table
-                
+
                 if(isset($_POST['submit'])){
 
                     $count = 0;
@@ -243,7 +244,7 @@ include 'include/pos-sidebar.html';
                     if($count>0){
                         $errorMessage = "Please fill up the required fields";
                     }   else    {
-                        mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '0', '$_POST[payment_method]')") or die(mysqli_error($connection));
+                        mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '0', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
                     }
                 }
 
@@ -254,10 +255,10 @@ include 'include/pos-sidebar.html';
                     die("Invalid query: ".$connection->error);
                 }
 
-                
+                $total =['beverage_price' => 0];
                 while($row =$result->fetch_assoc())
                 {
-
+                    $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price']];
                     echo "<tr>
                         <td>".$row["beverage_flavor"]. "</td>
                         <td>".$row["beverage_size"]. "</td>
@@ -270,7 +271,11 @@ include 'include/pos-sidebar.html';
                     </tr>";
 
                 }
-                
+                echo '<tr align= center>';
+                    echo '<th colspan="5" style="text-align: right;">Total Sales:</th>';
+                    echo '<td ><b>' . $total['beverage_price'] . '</b></td>';
+                  
+                   echo '</tr>'; 
                 ?>
 
                         </table>
@@ -280,13 +285,6 @@ include 'include/pos-sidebar.html';
 
                     
 <!--Fetch 2 data from different tables-->                    
-
-
-                    <div class="row">
-                        <div class="container bg-white p-3">
-                            <h4>Total:</h4>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
