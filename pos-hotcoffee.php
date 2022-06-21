@@ -5,7 +5,6 @@ include 'include/pos-head.html';
 include 'include/pos-sidebar.html';
 ?>
 
-<?php session_start(); ?>
 
 <?php   
     if(isset($_SESSION['status'])){

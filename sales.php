@@ -60,7 +60,12 @@ include 'staff-add-function.php'
 
                 if(mysqli_num_rows($result) > 0)
                 {
+                    $total =['beverage_price' => 0,
+                             'beverage_qty' => 0, ];
+
                     foreach( $result as $row){  
+                    $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price'],
+                                 'beverage_qty' =>  $total['beverage_qty']+ $row['beverage_qty']];
                     echo "<tr>
                     <td>".$row["sales_ID"]. "</td>
                     <td>".$row["beverage_flavor"]. "</td>
@@ -71,6 +76,15 @@ include 'staff-add-function.php'
                     <td>".$row["date_released"]. "</td>    
                     </tr>";
                     }
+                    echo '<tr align= center>';
+                    echo '<th colspan="4" style="text-align: right;">Quantity:</th>';
+                    echo '<td ><b>' . $total['beverage_qty'] . '</b></td>';
+                    echo '<th colspan="1" style="text-align: right;">Total Sales:</th>';
+                    echo '<td ><b>' . $total['beverage_price'] . '</b></td>';
+                  
+                   echo '</tr>';
+                   
+                
                 }
                 else
                 {

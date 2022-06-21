@@ -134,7 +134,7 @@ include 'include/pos-sidebar.html';
                                                 <div class="controls">  
                                                     <select class="form-control" name="beverage_name">
                                                         <?php
-                                                            $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 5 OR beverage_name_id = 6 OR beverage_name_id = 7");
+                                                            $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 1 OR beverage_name_id = 6 OR beverage_name_id = 7");
                                                             while($row =$res->fetch_assoc())
                                                             {
                                                                 echo "<option>";
@@ -295,8 +295,6 @@ if(isset($_POST['submit'])){
 }
 
 ?>
-
-
 
                     <div class="row">
                         <div class="container bg-white p-3">
