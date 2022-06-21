@@ -1,14 +1,16 @@
 <?php
 require 'condb.php';
 include 'include/sidebar.html';
-include 'include/topbar.html';
+include 'include/topbar.php';
 include 'include/head.html';
 ?>
 <body>
     <div>
     <div class="bigside">
         <div class="container my-5" style="margin:66px;">
-            <h1>WELCOME ADMIN "NAME"!</h1>
+            <?php 
+            /*session_start();*/
+            echo "WELCOME"." ".$_SESSION['user']."!";?>
         </div>
             <div class="container-fluid mt-3 text-center">
                 <div class="row">
