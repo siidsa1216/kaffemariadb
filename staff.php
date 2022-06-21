@@ -1,7 +1,7 @@
 <?php
 require 'condb.php';
 include 'include/sidebar.html';
-include 'include/topbar.html';
+include 'include/topbar.php';
 include 'include/head.html';
 include 'staff-add-function.php'
 
