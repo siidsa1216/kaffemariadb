@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
     if($row["user_type"]=="user"){
         $_SESSION['user'] = $user_name;
-        header("Location:pos.php");
+        header("Location:pos-user.php");
     }
 
     if($row["user_type"]=="admin"){
