@@ -40,29 +40,6 @@ include 'include/pos-sidebar.html';
                 border:round;
             }
         
-        /* Dropdown Content (Hidden by Default) */
-        .dropdown-content { 
-                display: none;
-                position: absolute;
-                background-color: black;
-                min-width: 160px;
-                box-shadow: none;
-                z-index: 1;
-            }
-        
-        /* Links inside the dropdown */
-        .dropdown-content a {
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-        }
-
-        .dropdown-content a:hover {background-color: none;}
-
-        .dropdown:hover .dropdown-content {display: block;}
-
-        .dropdown:hover .dropbtn {background-color: #8E5431;}
 
         /* The popup form - hidden by default */
         .form-popup {
@@ -135,9 +112,11 @@ include 'include/pos-sidebar.html';
                             
 
                     <div id="content">
-                        <!--breadcrum-->
+                        <!--breadcrumb-->
                         <div id="content-header">
-                            <div id="breadcrumb">Milk Tea</div>
+                            <div id="breadcrumb">
+                            <h5>Milk Tea</h5>    
+                            </div>
                         </div>
                         <br>
                         <!--end of breadcrumb-->
@@ -147,9 +126,6 @@ include 'include/pos-sidebar.html';
                         <div class="row-fluid">
                             <div class="span12">
                                 <div class="widget-box">
-                                    <div class="widget-title">
-                                        <h5>Chuvaneknek</h5>
-                                    </div>
 
                                     <div class="widget-content nopadding">
                                         <form name="form1" action="" method='POST' class="form-horizontal">
