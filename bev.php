@@ -1,7 +1,7 @@
 <?php
 require 'condb.php';
 include 'include/sidebar.html';
-include 'include/topbar.html';
+include 'include/topbar.php';
 include 'include/head.html';
 include 'bev-create.php';
 
@@ -54,6 +54,7 @@ include 'bev-create.php';
         </table>
     </div> 
 
+    
     <!--POPUP FORM FOR ADD BEVERAGE-->
     <div class="container" id="newbev">
     <center>
@@ -69,7 +70,7 @@ include 'bev-create.php';
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Quantity</label>
                 <div class="col-sm-6">
-                    <input type="number" class="form-control" name="beverage_qty" value="<?php echo $beverage_qty; ?>" required>
+                    <input type="text" class="form-control" name="beverage_qty" value="<?php echo $beverage_qty; ?>" required>
                 </div>
             </div>
             <div class="row mb-3">
