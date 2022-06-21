@@ -233,13 +233,27 @@ include 'include/pos-sidebar.html';
                 }
     
                 //read all data inn the table
-    
+                
+                if(isset($_POST['submit'])){
+
+                    $count = 0;
+                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_qty='$_POST[beverage_qty]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
+                    $count=mysqli_num_rows($result);
+                    
+                    if($count>0){
+                        $errorMessage = "Please fill up the required fields";
+                    }   else    {
+                        mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '0', '$_POST[payment_method]')") or die(mysqli_error($connection));
+                    }
+                }
+
                 $sql = "SELECT * FROM sales";            
                 $result= $connection->query($sql);
 
                 if (!$result){
                     die("Invalid query: ".$connection->error);
                 }
+
                 
                 while($row =$result->fetch_assoc())
                 {
@@ -266,35 +280,7 @@ include 'include/pos-sidebar.html';
 
                     
 <!--Fetch 2 data from different tables-->                    
-<?php
-if(isset($_POST['submit'])){
 
-    $count = 0;
-    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_qty='$_POST[beverage_qty]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
-    $count=mysqli_num_rows($result);
-    
-    if($count>0){
-        ?>
-        <script type="text/javascript">
-            document.getElementById("success").style.display = "none";
-            document.getElementById("error").style.display = "block";
-        </script>
-        <?php
-    }   else    {
-        mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '0', '$_POST[payment_method]')") or die(mysqli_error($connection));
-        ?>
-        <script type="text/javascript">
-            document.getElementById("error").style.display = "none";
-            document.getElementById("success").style.display = "block";
-            setTimeout(funtion(){
-                window.location.href=window.location.href;
-            }, 3000);
-        </script>
-        <?php
-    }
-}
-
-?>
 
                     <div class="row">
                         <div class="container bg-white p-3">

@@ -64,31 +64,51 @@ include 'bev-create.php';
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Flavor</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="beverage_flavor" value="<?php echo $beverage_flavor; ?>" required>
+                    <select class="form-control" name="beverage_name">
+                        <?php
+                            $res=mysqli_query($connection, "SELECT * FROM beverage_name");
+                            while($row =$res->fetch_assoc())
+                            {
+                                echo "<option>";
+                                echo $row["beverage_name"];
+                                echo "</option>";
+                            }
+                        ?>
+                    </select>
+                    </div>
                 </div>
-            </div>
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Quantity</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="beverage_qty" value="<?php echo $beverage_qty; ?>" required>
+                    <input type="text" class="form-control" name="beverage_qty"> <!--value="<?php echo $beverage_qty; ?>" required-->
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Size</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="beverage_size" value="<?php echo $beverage_size; ?>" required>
+                    <select class="form-control" name="beverage_size">
+                        <?php
+                            $res=mysqli_query($connection, "SELECT * FROM beverage_size");
+                            while($row =$res->fetch_assoc())
+                            {
+                                echo "<option>";
+                                echo $row["beverage_size"];
+                                echo "</option>";
+                            }
+                        ?>
+                    </select>
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Price</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="beverage_price" value="<?php echo $beverage_price; ?>" required>
+                    <input type="text" class="form-control" name="beverage_price"> <!--value="<?php echo $beverage_price; ?>" required-->
                 </div>
             </div>
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Payment</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="payment_method" value="<?php echo $payment_method; ?>"required>
+                    <input type="text" class="form-control" name="payment_method"> <!--value="<?php echo $payment_method; ?>"required-->
                 </div>
             </div>
 
@@ -96,7 +116,7 @@ include 'bev-create.php';
             ?>
              <div class="row mb-3">
                 <div class="col-sm-6 d-grid">
-                    <button type="submit" onclick="JSalert()" class="btn btn-primary">Submit</button>
+                    <button type="submit" onclick="JSalert()" class="btn btn-primary" name="submit">Submit</button>
                 </div>
                 <div class="col-sm-6 d-grid">
                     <a class="btn btn-outline-primary" onclick="closeForm()" role="button">Cancel</a>
@@ -120,8 +140,10 @@ include 'bev-create.php';
         <script type="text/javascript">
              function JSalert() {
 	    alert("Successfully added.");
-    }
-
+        }
         </script>
+
+
+
 </body>
 </html>

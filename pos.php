@@ -1,6 +1,6 @@
 <?php
 require 'condb.php';
-include 'include/pos-topbar.php';
+include 'include/pos-topbar-admin.php';
 include 'include/pos-head.html';
 
 ?>
