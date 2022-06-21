@@ -1,11 +1,15 @@
 <?php
 require 'condb.php';
-include 'include/pos-topbar.html';
+include 'include/pos-topbar.php';
 include 'include/pos-head.html';
+
 ?>
+
 <body>
     <div class="bigside1">
-        <h1>Welcome!</h1>
+        <?php 
+        /*session_start();*/
+        echo "Welcome"." ".$_SESSION['user']."!";?>
     <div class="container-fluid bg-light">
             <div class="row m-2">
                 <div class="col  p-1 m-2 text-black text-center">
