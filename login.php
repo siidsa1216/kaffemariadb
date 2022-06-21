@@ -1,4 +1,5 @@
 <?php
+session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -22,10 +23,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $row=mysqli_fetch_array($result);
 
     if($row["user_type"]=="user"){
+        $_SESSION['user'] = $user_name;
         header("Location:pos.php");
     }
 
     if($row["user_type"]=="admin"){
+        $_SESSION['user'] = $user_name;
         header("Location:home.php");
     }
 
