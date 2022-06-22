@@ -46,10 +46,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <body>
     <style type="text/css">
     body{
-        background-color: #F3E3D3;
+margin:0;
+padding:0;
     }
 
-    
+    .containerbody{
+        width:100%;
+        height:100vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("img/cafe.jpg");
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+    }
     #text{
         height: 25px;
         border-radius: 5px;
@@ -154,7 +162,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama&family=Ubuntu&display=swap" rel="stylesheet">
     </style>
-    
+<div class="containerbody">
 <div id="box">
     <form action="#" method="POST">
 
@@ -175,5 +183,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     </form>  
     <div id= "headbox"><div style="font-size: 50px;margin: 10px;color:  #F3E3D3;text-align: center; line-height:70px;margin-top: 7px;">LOGIN</div> 
 </div>
+</div> 
 </body>
 </html>
