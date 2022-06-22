@@ -1,14 +1,50 @@
 
+<style>
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+
+</style>
+
 <div class="sidebar">
         <div class="buttonsss">
             <ul>
                  <li><a href="/kaffemariadb/home.php">HOME</a></li>
                 <li><a href="/kaffemariadb/bev.php">BEVERAGE</a></li>
-                <li><a href="/kaffemariadb/inventory.php">INVENTORY</a></li>
+                    <div class="dropdown">
+                    <li><a class="dropbtn" href="#">INVENTORY</a></li>
+                    <div class="dropdown-content">
+                        <a href="/kaffemariadb/inventory.php">Ingredient</a>
+                        <a href="/kaffemariadb/inventory-item.php">Item</a></div>
+                    </div>
                 <li><a href="/kaffemariadb/staff.php">STAFF</a></li>
                 <li><a href="/kaffemariadb/sales.php">SALES</a></li>
                 <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
-                <li><a href="/kaffemariadb/pos.php">POS</a></li>
+                <li><a href="/kaffemariadb/pos.php">POS </a></li>
                 <li><a href="manageaccounts.php">MANAGE ACCOUNTS</a></li>
                 <li><a href="/kaffemariadb/logout.php">LOGOUT</a></li>
 
