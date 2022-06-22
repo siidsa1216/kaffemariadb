@@ -61,7 +61,7 @@ else{
         } 
         $successMessage = "Item updated successfully!";
 
-        header("location:/kaffemariadb/inventory.php");
+        header("location:/kaffemariadb/inventory-item.php");
         exit;
     }while(false);
 
