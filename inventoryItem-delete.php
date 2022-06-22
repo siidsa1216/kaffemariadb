@@ -7,7 +7,7 @@ if(isset($_GET['item_No'])){
     $sql = "DELETE FROM item WHERE item_No = $item_No";
     $connection->query($sql);
 
-    header("location:/kaffemariadb/inventory.php");
+    header("location:/kaffemariadb/inventory-item.php");
     exit;
 
 }
