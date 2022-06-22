@@ -2,7 +2,7 @@
 require 'condb.php';
 include 'include/pos-topbar.php';
 include 'include/pos-head.html';
-include 'include/pos-sidebar.html';
+include 'include/pos-sidebar-user.html';
 ?>
         <style div class="icedcoffee-container">
             body {font-family: Arial, Helvetica, sans-serif;
