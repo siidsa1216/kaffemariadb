@@ -5,7 +5,7 @@ include 'include/pos-head.html';
 include 'include/pos-sidebar.html';
 ?>
         <style div class="icedcoffee-container">
-            body {font-family: Arial, Helvetica, sans-serif;
+            body {font-family: 'Georama';
                 background-color:#F3E3D3;}
             * {box-sizing: border-box;
             }
@@ -56,6 +56,7 @@ include 'include/pos-sidebar.html';
         max-width: 400px;
         padding: 10px;
         background-color: white;
+        border-radius: #8E5431;
         }
 
         .form-container{
@@ -67,6 +68,7 @@ include 'include/pos-sidebar.html';
         }
 
         .form-container .btn {
+        border-radius:  #8E5431;
         background-color: #04AA6D;
         color: white;
         padding: 16px 20px;
@@ -81,13 +83,14 @@ include 'include/pos-sidebar.html';
         .form-container .cancel {
         margin-top:50px;
         background-color: #e7dcdc;
-        color:black;
+        color: #8E5431; 
         font-family:monospace;
         }
 
         /* Add some hover effects to buttons */
         .form-container .btn:hover, .open-button:hover {
-        opacity: 1;
+         background color:#8E5431;
+         color: white;
         }
         .col-lg-5{
             margin-top:-580px;
@@ -100,7 +103,39 @@ include 'include/pos-sidebar.html';
             margin-top:-182px;
             margin-left:180px;
         }
-        
+
+        #box2{
+        border: 2px solid #C98860;
+        background: 	#C98860;
+		font-size: 18px;
+		font-family: "Georama";
+        font-weight: bold;
+		cursor: pointer;
+		margin: 10px;
+		color: white;
+		transition: 0.8;
+		border-radius: 8px;
+		height: 45px;
+		width: 120px;
+		transition-duration: 0.4s;
+		position:absolute;
+        margin: 100px;
+		top: 320px;
+		left: -70px;
+    }
+
+    #box2:hover{
+        background:  #FFF4ED;
+        color:  #8E5431;
+    }
+
+    
+
+        </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama&family=Ubuntu&display=swap" rel="stylesheet">
+    </style>
     </style>
 
 <body>
@@ -113,12 +148,17 @@ include 'include/pos-sidebar.html';
 
                     <div id="content">
                         <!--breadcrumb-->
+<<<<<<< HEAD
+                        <div id="content-header" style= "margin-top: -30px;font-size: 16px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: bold;">
+                            <div id="breadcrumb" style="font-size: 25px; font-weight: bold; margin-top: -60px;">
+                            <th>Milk Tea</th>    
+=======
                         <div id="content-header">
                             <div id="breadcrumb">
                             <h5>MILK TEA</h5>    
+>>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                             </div>
                         </div>
-                        <br>
                         <!--end of breadcrumb-->
 
                     <!--Action Boxes-->
@@ -127,9 +167,21 @@ include 'include/pos-sidebar.html';
                             <div class="span12">
                                 <div class="widget-box">
 
+                                <div class="widget-content nopadding">
+                                        <form name="form1" action="" method='POST' class="form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label"style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Customer Name</label>
+                                                <div class="controls">
+                                                <input type="text" class="form-control" placeholder="Customer Name" name="customer_name" style= "margin-left: -18px; margin-top: -9px; width: 350px;">
+                                                </div>
+                                            </div>
+
                                     <div class="widget-content nopadding">
                                         <form name="form1" action="" method='POST' class="form-horizontal">
                                             <div class="control-group">
+<<<<<<< HEAD
+                                                <label class="control-label" style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Beverage Name</label>
+=======
                                                 <label class="control-label">Customer Name</label>
                                                 <div class="controls">
                                                 <input type="text" class="form-control" placeholder="Customer Name" name="customer_name" />
@@ -138,8 +190,9 @@ include 'include/pos-sidebar.html';
 
                                             <div class="control-group">
                                                 <label class="control-label">Beverage Name</label>
+>>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                                                 <div class="controls">  
-                                                    <select class="form-control" name="beverage_name">
+                                                    <select class="form-control" name="beverage_name" style= "margin-left: -18px; margin-top: -9px; width:350px;">
                                                         <?php
                                                             $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 5 OR beverage_name_id = 6 OR beverage_name_id = 7");
                                                             while($row =$res->fetch_assoc())
@@ -154,9 +207,9 @@ include 'include/pos-sidebar.html';
                                             </div>
 
                                             <div class="control-group">
-                                                <label class="control-label">Beverage Size</label>
+                                                <p class="control-label" style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Beverage Size</p>
                                                 <div class="controls">
-                                                    <select name="beverage_size" class="form-control">
+                                                    <select name="beverage_size"class="form-control" style= "margin-left: -18px; margin-top: -17px; margin-top: -13px; width: 350px;">
                                                         <option  value="8oz">8oz</option>
                                                         <option  value="12oz">12oz</option>
                                                     </select>
@@ -164,13 +217,16 @@ include 'include/pos-sidebar.html';
                                             </div>
 
                                             <div class="control-group">
-                                                <label class="control-label">Beverage Quantity</label>
+                                                <label class="control-label" style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Beverage Quantity</label>
                                                 <div class="controls">
-                                                <input type="text" class="form-control" placeholder="Beverage Quantity" name="beverage_qty" />
+                                                <input type="text" class="form-control" placeholder="Beverage Quantity" name="beverage_qty" style= "margin-left: -18px; margin-top:-10px; width: 350px;">
                                                 </div>
                                             </div>
 
                                             <div class="control-group">
+<<<<<<< HEAD
+                                                <label class="control-label" style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Beverage Price</label>
+=======
                                                 <label class="control-label">Beverage Price</label>
                                                 <div class="controls">
                                                     <select class="form-control" name="beverage_price">
@@ -189,8 +245,27 @@ include 'include/pos-sidebar.html';
 
                                             <div class="control-group">
                                                 <label class="control-label">Payment Method</label>
+>>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                                                 <div class="controls">
-                                                    <select name="payment_method" class="form-control">
+                                                    <select class="form-control" name="beverage_price"  style= "margin-left: -18px; margin-top:-10px; width: 350px;">
+                                                        <?php
+                                                            $res=mysqli_query($connection, "SELECT beverage_price FROM beverage_size WHERE beverage_size_id = 1 OR beverage_size_id = 2");
+                                                            while($row =$res->fetch_assoc())
+                                                            {
+                                                                echo "<option>";
+                                                                echo $row["beverage_price"];
+                                                                echo "</option>";
+                                                            }
+                                                        ?>
+                                                    </select>                                                
+                                                </div>
+                                            </div>
+
+                               
+                                            <div class="control-group">
+                                                <label class="control-label"style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Payment Method</label>
+                                                <div class="controls">
+                                                    <select name="payment_method" class="form-control" style= "margin-left: -18px; margin-top: -8px; width: 350px;">
                                                         <option  value="Cash">Cash</option>
                                                         <option  value="Gcash">Gcash</option>
                                                     </select>
@@ -201,7 +276,7 @@ include 'include/pos-sidebar.html';
                                             <!--Button-->
                                             <br>
                                             <div class="form-actions">
-                                                <button type="submit" name="submit" class="btn btn-success">submit</button>
+                                                <button type="submit" name="submit" class="btn btn-success" id="box2">Submit</button>
                                             </div>
 
                                         </form>
@@ -227,25 +302,26 @@ include 'include/pos-sidebar.html';
                 
     
             <!--Yung sa gilid na display table-->
-                <div class="col-lg-6">
+                <div class="col-lg-15">
                     <div class="row">
-                        <div class="container bg-white p-3">
-                        <table class="table text-center">
+                        <div class="container bg-white p-3" style= "width:700px; margin-top: -480px; margin-left: 420px; font-size: 10px; font-family: 'Georama'; sans-serif; color:#8E5431; font-weight: ;">
+                        <table class="table text-center" style= "font-size: 15px;">
                             <thead>
-                                <th>Customer ID</th>
+                                <th>Customer Name</th>
                                 <th>Beverage Name</th>
                                 <th>Beverage Size</th>
                                 <th>Beverage Quantity</th>
                                 <th>Beverage Price</th>
                                 <th>Payment Method</th>
+<<<<<<< HEAD
+                                <th>Date</th>
+=======
                                 <th>Date Released</th>
+>>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                                 <th>Action</th>
                             </thead>
                             
-
-
-<!--Display na yung nasubmit-->                       
-<?php
+                            <?php
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
@@ -272,10 +348,19 @@ include 'include/pos-sidebar.html';
                     }   else    {
                         mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '$_POST[beverage_price]', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
                         mysqli_query($connection, "INSERT INTO customer VALUES(NULL, '$_POST[customer_name]', NULL)") or die(mysqli_error($connection));
+<<<<<<< HEAD
 
                     }
                 }
 
+=======
+                        mysqli_query($connection, "UPDATE stock_master SET product_qty=product_qty-'$_POST[beverage_qty]' WHERE product_name='$_POST[beverage_name]' && product_size='$_POST[beverage_size]' ") or die(mysqli_error($connection));
+                    }
+                }
+
+
+                #read all data
+>>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                 $sql = "SELECT s.*, c.customer_name FROM sales s, customer c WHERE s.date_released = c.date_released";            
                 $result= $connection->query($sql);
 
@@ -314,7 +399,8 @@ include 'include/pos-sidebar.html';
                     <br><br>
 
                     
-<!--Fetch 2 data from different tables-->                    
+<!--Fetch 2 data from different tables-->      
+
                 </div>
             </div>
         </div>

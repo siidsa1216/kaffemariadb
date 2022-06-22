@@ -4,20 +4,7 @@ include 'include/pos-topbar.php';
 include 'include/pos-head.html';
 include 'include/pos-sidebar.html';
 ?>
-
-
-<?php   
-    if(isset($_SESSION['status'])){
-        echo $_SESSION['status'];
-        unset($_SESSION['status']);
-    }
-    ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <body>
-        <style div class="hotcoffee-container">
+        <style div class="icedcoffee-container">
             body {font-family: Arial, Helvetica, sans-serif;
                 background-color:#F3E3D3;}
             * {box-sizing: border-box;
@@ -53,29 +40,6 @@ include 'include/pos-sidebar.html';
                 border:round;
             }
         
-        /* Dropdown Content (Hidden by Default) */
-        .dropdown-content { 
-                display: none;
-                position: absolute;
-                background-color: black;
-                min-width: 160px;
-                box-shadow: none;
-                z-index: 1;
-            }
-        
-        /* Links inside the dropdown */
-        .dropdown-content a {
-                color: white;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-        }
-
-        .dropdown-content a:hover {background-color: none;}
-
-        .dropdown:hover .dropdown-content {display: block;}
-
-        .dropdown:hover .dropbtn {background-color: #8E5431;}
 
         /* The popup form - hidden by default */
         .form-popup {
@@ -115,7 +79,7 @@ include 'include/pos-sidebar.html';
 
         /* Add a red background color to the cancel button */
         .form-container .cancel {
-        margin-top:20px;
+        margin-top:50px;
         background-color: #e7dcdc;
         color:black;
         font-family:monospace;
@@ -125,163 +89,162 @@ include 'include/pos-sidebar.html';
         .form-container .btn:hover, .open-button:hover {
         opacity: 1;
         }
-        
-        .hotcoffee-container{
-            margin:200px;
-            margin-top:150px;
-            margin-left:320px;
-            border-radius:500px;
-        }
-        .coffee1{
-            margin-top:30px;
-            margin-left:-0px;
-        }
-        .coffee2{
-            margin-top:-185px;
-            margin-left:150px;
+        .col-lg-5{
+            margin-top:-580px;
         }
         .coffee3{
-            margin-top:30px;
-            margin-left:-50px;
+            margin-top:-332px;
+            margin-left:180px;
         }
         .coffee4{
-            margin-top:-185px;
-            margin-left:150px;
+            margin-top:-182px;
+            margin-left:180px;
         }
-        .container1{
-            margin-left:780px;
-            margin-top:-550px;
-            border-style:none;
-            background-color:white;
-            width:700px;
-            height:550px;
-            font-size: 11px;
-            color:white;
-            background-color:#8E5431;
-            border-radius:25px;
-        }
-        .container2{
-            background-color:black;
-            margin-left:780px;
-            margin-top:-680px;
-            width:720px;
-            height:550px;
-            border-radius:25px;
-        }
-        </style>
+        
+    </style>
+
+<body>
+<div class="bigside p-4">
+        <div class="container-fluid mt-5">
+                <div class="row">
+                <div class="col-lg-6">
+                    <div class="container-fluid p-3">
+                            
+
+                    <div id="content">
+                        <!--breadcrumb-->
+                        <div id="content-header">
+                            <div id="breadcrumb">
+                            <h5>ICED COFFEE</h5>    
+                            </div>
+                        </div>
+                        <br>
+                        <!--end of breadcrumb-->
+
+                    <!--Action Boxes-->
+                    <div class="container-fluid">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="widget-box">
+
+                                    <div class="widget-content nopadding">
+                                        <form name="form1" action="" method='POST' class="form-horizontal">
+                                            <div class="control-group">
+                                                <label class="control-label">Customer Name</label>
+                                                <div class="controls">
+                                                <input type="text" class="form-control" placeholder="Customer Name" name="customer_name" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">Beverage Name</label>
+                                                <div class="controls">  
+                                                    <select class="form-control" name="beverage_name">
+                                                        <?php
+                                                            $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 1 OR beverage_name_id = 2 OR beverage_name_id = 3 OR beverage_name_id = 4");
+                                                            while($row =$res->fetch_assoc())
+                                                            {
+                                                                echo "<option>";
+                                                                echo $row["beverage_name"];
+                                                                echo "</option>";
+                                                            }
+                                                        ?>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">Beverage Size</label>
+                                                <div class="controls">
+                                                    <select name="beverage_size" class="form-control">
+                                                        <option  value="8oz">8oz</option>
+                                                        <option  value="12oz">12oz</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">Beverage Quantity</label>
+                                                <div class="controls">
+                                                <input type="text" class="form-control" placeholder="Beverage Quantity" name="beverage_qty" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">Beverage Price</label>
+                                                <div class="controls">
+                                                    <select class="form-control" name="beverage_price">
+                                                        <?php
+                                                            $res=mysqli_query($connection, "SELECT beverage_price FROM beverage_size WHERE beverage_size_id = 1 OR beverage_size_id = 2");
+                                                            while($row =$res->fetch_assoc())
+                                                            {
+                                                                echo "<option>";
+                                                                echo $row["beverage_price"];
+                                                                echo "</option>";
+                                                            }
+                                                        ?>
+                                                    </select>                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">Payment Method</label>
+                                                <div class="controls">
+                                                    <select name="payment_method" class="form-control">
+                                                        <option  value="Cash">Cash</option>
+                                                        <option  value="Gcash">Gcash</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <!--Button-->
+                                            <br>
+                                            <div class="form-actions">
+                                                <button type="submit" name="submit" class="btn btn-success">submit</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                    <!--Widget Box-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--content-->
+                    </div>
+                        
+                    
+
+                    <!--closing the container-fluid-->
+                    </div>
+                </div>
 
 
 
-
-
-<!--PICTURE 1 POP UP-->
-<div class="hotcoffee-container">
-    <div class="coffee1">
-        <img src="/kaffemariadb/img/hot-coffee.jpg" onclick="Americano()" style="width:180px; height:180px;" ></img>
-        <div class="form-popup" id="myForm">
-  <form action="try.php" class="form-container" method="POST">
-    <h1>Hot Coffee Americano</h1>
-
-            <div class="from-group">
-                <label for="">Beverage Size</label>
-            <select name="beverage_size" class="form-control">
-                <option  value="8oz">8oz</option>
-                <option  value="12oz">12oz</option>
-            </select>
-        </div>
-        <div class="from-group">
-                <label class="control-label">Enter Quantity</label>
-            <div class="controls">
-                <input type="text" name="beverage_qty" value="0">
-            </div>
-        </div>
-        <div class="from-group">
-                <label for="">Payment Method</label>
-            <select name="payment_method" class="form-control">
-                <option  value="Cash">Cash</option>
-                <option  value="Gcash">Gcash</option>
-            </select>
-        </div>
-        <div class="from-group">
-            <BR></BR>
-            <button type="submit" name="submit" class="btn btn-primar">submit</button>
-        </div>
-
-    <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
-
-  </form>
-</div>
-</div>
-
-
-    <div class="coffee2">
-        <img src="/kaffemariadb/img/hot-coffee.jpg" onclick="Americano()" style="width:180px; height:180px;" ></img>
-    </div>
-
-
-    <div class="coffee3">
-        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
-    </div>
-
-
-    <div class="coffee4">   
-        <img src="/kaffemariadb/img/hot-coffee.jpg" style="width:180px; height:180px; margin-left:50px;"></a>
-    </div>
-</div>
-</form>
-
-
-
- 
-
-
-
-
-
-<!--POPUP FUNCTION (NOT NEEDED ATA)-->
-<script>
-function Americano() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
-
-
-
-
-<!--YUNG NASA RIGHT-->
-<div class = "container2">
-</div>
-<div class = "container1">
-    <br><br>
+                
     
-    <!--<label style="margin-left:50px;">Beverage Name</label>
-    <label style="margin-left:50px;">Beverage Flavor</label>
-    <label style="margin-left:50px;">Beverage Quantity</label>
-    <label style="margin-left:50px;">Beverage Price</label>
-    <label style="margin-left:50px;">Payment Method</label>-->
-
-    <table class="table">
-            <thead>
-                <th>Beverage Name</th>
-                <th>Beverage Size</th>
-                <th>Beverage Quantity</th>
-                <th>Beverage Price</th>
-                <th>Payment Method</th>
-            </thead>
-    
-</div>
-</div> 
-
+            <!--Yung sa gilid na display table-->
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="container bg-white p-3">
+                        <table class="table text-center">
+                            <thead>
+                                <th>Customer Name</th>
+                                <th>Beverage Name</th>
+                                <th>Beverage Size</th>
+                                <th>Beverage Quantity</th>
+                                <th>Beverage Price</th>
+                                <th>Payment Method</th>
+                                <th>Date Released</th>
+                                <th>Action</th>
+                            </thead>
+                            
 
 
-
-
-
-<!--TO DISPLAY THE SUBMITTED INFO-->
+<!--Display na yung nasubmit-->                       
 <?php
                 $servername = "localhost";
                 $username = "root";
@@ -294,33 +257,67 @@ function closeForm() {
                 if ($connection->connect_error){
                     die("connection failed: ". $$connection->connect_error);
                 }
-    
+
+       
                 //read all data inn the table
-    
-                $sql = "SELECT s.*, b.beverage_name AS bname FROM sales s, beverage_name b WHERE b.beverage_name_id = 2";
+
+                if(isset($_POST['submit'])){
+
+                    $count = 0;
+                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_price='$_POST[beverage_price]' && beverage_qty='$_POST[beverage_qty]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
+                    $count=mysqli_num_rows($result);
+                    
+                    if($count>0){
+                        $errorMessage = "Please fill up the required fields";
+                    }   else    {
+                        mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '$_POST[beverage_price]', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
+                        mysqli_query($connection, "INSERT INTO customer VALUES(NULL, '$_POST[customer_name]', NULL)") or die(mysqli_error($connection));
+
+                    }
+                }
+
+                $sql = "SELECT s.*, c.customer_name FROM sales s, customer c WHERE s.date_released = c.date_released";            
                 $result= $connection->query($sql);
-    
+
                 if (!$result){
                     die("Invalid query: ".$connection->error);
                 }
-    
-                while($row =$result->fetch_assoc()){
+
+                $total =['beverage_price' => 0];
+                while($row =$result->fetch_assoc())
+                {
+                    $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price'] * $row['beverage_qty']];
                     echo "<tr>
-                    <td>".$row["bname"]. "</td>
-                    <td>".$row["beverage_size"]. "</td>
-                    <td>".$row["beverage_qty"]. "</td>
-                    <td>".$row["beverage_price"]. "</td>
-                    <td>".$row["payment_method"]. "</td>
-                    <td>
-                    <a class='btn btn-danger btn-sm' href='/kaffemariadb/pos-hotcoffee-delete.php?sales_ID=$row[sales_ID]'>Delete</a>
-                    </td>
-                </tr>";
+                        <td>".$row["customer_name"]. "</td>
+                        <td>".$row["beverage_flavor"]. "</td>
+                        <td>".$row["beverage_size"]. "</td>
+                        <td>".$row["beverage_qty"]. "</td>
+                        <td>".$row["beverage_price"]. "</td>
+                        <td>".$row["payment_method"]. "</td>
+                        <td>".$row["date_released"]. "</td>
+                        <td>
+                            <a class='btn btn-danger btn-sm' href='/kaffemariadb/pos-hotcoffee-delete.php?sales_ID=$row[sales_ID]'>Delete</a>
+                        </td>
+                    </tr>";
+
                 }
+                echo '<tr align= center>';
+                    echo '<th colspan="5" style="text-align: right;">Total Sales:</th>';
+                    echo '<td ><b>' . $total['beverage_price'] . '</b></td>';
+                  
+                   echo '</tr>'; 
                 ?>
 
+                        </table>
+                        </div>
+                    </div>
+                    <br><br>
 
+                    
+<!--Fetch 2 data from different tables-->                    
+                </div>
+            </div>
+        </div>
 
 </body>
-</head>
 </html>
-<!--<button type="button" class="btn submit" onclick="closeForm()">Submit</button> -->
