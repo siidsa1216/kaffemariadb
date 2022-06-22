@@ -130,6 +130,19 @@ include 'include/pos-sidebar.html';
     }
 
     
+    .btn-danger {
+    color: #FFF4ED;
+    background-color: #8E5431;
+    border-color: #8E5431;
+    border-radius:10px;
+}
+
+.btn-danger:hover {
+    color: #8E5431;
+    background:#FFF4ED;
+    border-color: #8E5431;
+
+}
 
         </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -150,7 +163,7 @@ include 'include/pos-sidebar.html';
                         <!--breadcrumb-->
                         <div id="content-header" style= "margin-top: -30px;font-size: 16px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: bold;">
                             <div id="breadcrumb" style="font-size: 25px; font-weight: bold; margin-top: -60px;">
-                            <th>MILK TEA</th>    
+                            <th>Milk Tea</th>    
                             </div>
                         </div>
                         <!--end of breadcrumb-->
@@ -177,7 +190,7 @@ include 'include/pos-sidebar.html';
                                                 <div class="controls">  
                                                     <select class="form-control" name="beverage_name" style= "margin-left: -18px; margin-top: -9px; width:350px;">
                                                         <?php
-                                                            $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 5 OR beverage_name_id = 6 OR beverage_name_id = 7");
+                                                            $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 1 OR beverage_name_id = 6 OR beverage_name_id = 7");
                                                             while($row =$res->fetch_assoc())
                                                             {
                                                                 echo "<option>";
@@ -266,7 +279,7 @@ include 'include/pos-sidebar.html';
             <!--Yung sa gilid na display table-->
                 <div class="col-lg-15">
                     <div class="row">
-                        <div class="container bg-white p-3" style= "width:700px; margin-top: -480px; margin-left: 420px; font-size: 10px; font-family: 'Georama'; sans-serif; color:#8E5431; font-weight: ;">
+                        <div class="container bg-white p-3" style= "width:700px; margin-top: -490px; margin-left: 408px; font-size: 10px; font-family: 'Georama'; sans-serif; color:#8E5431; font-weight: ;">
                         <table class="table text-center" style= "font-size: 15px;">
                             <thead>
                                 <th>Customer Name</th>
@@ -306,12 +319,10 @@ include 'include/pos-sidebar.html';
                     }   else    {
                         mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '$_POST[beverage_price]', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
                         mysqli_query($connection, "INSERT INTO customer VALUES(NULL, '$_POST[customer_name]', NULL)") or die(mysqli_error($connection));
-                        mysqli_query($connection, "UPDATE stock_master SET product_qty=product_qty-'$_POST[beverage_qty]' WHERE product_name='$_POST[beverage_name]' && product_size='$_POST[beverage_size]' ") or die(mysqli_error($connection));
+
                     }
                 }
 
-
-                #read all data
                 $sql = "SELECT s.*, c.customer_name FROM sales s, customer c WHERE s.date_released = c.date_released";            
                 $result= $connection->query($sql);
 
@@ -350,8 +361,7 @@ include 'include/pos-sidebar.html';
                     <br><br>
 
                     
-<!--Fetch 2 data from different tables-->      
-
+<!--Fetch 2 data from different tables-->                    
                 </div>
             </div>
         </div>
