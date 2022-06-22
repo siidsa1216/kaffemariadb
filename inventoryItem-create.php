@@ -1,6 +1,6 @@
 <?php
  require 'condb.php';
- include 'include/head.html';
+
  
 $item_name="";
 $item_qty="";
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "Item added successfully!";
         
-        header("location:/kaffemariadb/inventory.php");
+        header("location:/kaffemariadb/inventory-item.php");
         exit;
 
     }while(false);
