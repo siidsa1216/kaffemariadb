@@ -75,6 +75,8 @@ include 'bev-create.php';
                             }
                         ?>
                     </select>
+                    </div>
+                </div>
             <div class="row mb-3">
                 <label class="col-sm-5 col-form-label">Quantity</label>
                 <div class="col-sm-6">
