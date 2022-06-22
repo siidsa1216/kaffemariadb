@@ -1,54 +1,95 @@
 
-<style>
+<div class="sidebar" style="left: 1px; top:20px;width:16%;">
+  <div class="buttonsss">
+      <ul>
+           <li><a href="/kaffemariadb/home.php"><ion-icon name="home-sharp"></ion-icon>&nbsp;HOME</a></li>
+          <li><a href="/kaffemariadb/bev.php"><ion-icon name="cafe-sharp"></ion-icon>&nbsp;BEVERAGE</a></li>
+          <div class="dropdown">
+              <li><a class="dropbtn" href="#"><ion-icon name="file-tray-stacked-sharp"></ion-icon>&nbsp;INVENTORY</a></li>
+              <div class="dropdown-content">
+                  <a href="/kaffemariadb/inventory.php">Ingredient</a>
+                  <a href="/kaffemariadb/inventory-item.php">Item</a></div>
+              </div>
+          <li><a href="/kaffemariadb/staff.php"><ion-icon name="person-sharp"></ion-icon>&nbsp;STAFF</a></li>
+          <li><a href="/kaffemariadb/sales.php"><ion-icon name="analytics-sharp"></ion-icon>&nbsp;SALES</a></li>
+          <li><a href="/kaffemariadb/supplier.php"><ion-icon name="people-sharp"></ion-icon>&nbsp;SUPPLIER</a></li>
+          <li><a href="/kaffemariadb/pos.php"><ion-icon name="desktop-sharp"></ion-icon>&nbsp;POS</a></li>
+          <li><a href="manageaccounts.php"><ion-icon name="settings-sharp"></ion-icon>&nbsp;MANAGE ACCOUNTS</a></li>
+          <li><a href="/kaffemariadb/logout.php"><ion-icon name="log-out-sharp"></ion-icon>&nbsp;LOGOUT</a></li>
+
+      </ul>
+  </div>
+
+</div>
+
+<body>
+  <style type="text/css">
+      *
+      {
+          margin:0;
+          padding:0;
+          box-sizing: border-box;
+          
+          
+      }
+
+      .buttonsss ul li a{
+          color: 	#8E5431; 
+          font-size: 17px;
+          font-family: 'Georama';
+          font-weight: bold;
+          font-style: normal;
+          margin-top: -5px;
+          margin-left: -50px;
+          cursor: pointer;
+          position:relative;
+          width: 220px;
+          height: 40px;
+          text-decoration:none;
+          transition: 0.4s;
+          border-radius: 30px 0px 30px 0px; 
+          display:flex;
+          padding-top: 11px;
+          padding-left:18px;
+          line-height: 20px;
+          letter-spacing: 1px;
+      }
+      
+      .buttonsss ul li:hover a{
+          color:#F3E3D3;
+          background: #8E5431;
+          
+      }
+      
+      .dropdown {
+      position: relative;
+      display: inline-block;
+      }
+
+      .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #F3E3D3;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 20px;
+      }
+
+      .dropdown-content a {
+      color: #8E5431;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      }
 
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: #ffffff; border-radius:10px; color: #8E5431;}
 
 .dropdown:hover .dropdown-content {display: block;}
-
-
-</style>
-
-<div class="sidebar">
-        <div class="buttonsss">
-            <ul>
-                 <li><a href="/kaffemariadb/home.php">HOME</a></li>
-                <li><a href="/kaffemariadb/bev.php">BEVERAGE</a></li>
-                    <div class="dropdown">
-                    <li><a class="dropbtn" href="#">INVENTORY</a></li>
-                    <div class="dropdown-content">
-                        <a href="/kaffemariadb/inventory.php">Ingredient</a>
-                        <a href="/kaffemariadb/inventory-item.php">Item</a></div>
-                    </div>
-                <li><a href="/kaffemariadb/staff.php">STAFF</a></li>
-                <li><a href="/kaffemariadb/sales.php">SALES</a></li>
-                <li><a href="/kaffemariadb/supplier.php">SUPPLIER</a></li>
-                <li><a href="/kaffemariadb/pos.php">POS </a></li>
-                <li><a href="manageaccounts.php">MANAGE ACCOUNTS</a></li>
-                <li><a href="/kaffemariadb/logout.php">LOGOUT</a></li>
-
-            </ul>
-        </div>
-
-    </div>
+      
+  </style>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>   

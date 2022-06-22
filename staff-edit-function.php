@@ -76,8 +76,11 @@ else{
 ?>
 
 <body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Georama&family=Ubuntu&display=swap" rel="stylesheet">
     <div class="container my-5">
-        <h2>Staff List</h2>
+        <h2 style="margin:6px; font-size:40px;font-family: 'Georama', sans-serif; letter-spacing:2px;; color:#8E5431; font-weight: bold;">STAFF LIST</h2>
 
         <?php
         if (!empty($errorMessage)){
@@ -92,37 +95,37 @@ else{
         <form method = 'POST'>
             <input type="hidden" name="staffID" value="<?php echo $staffID; ?>">
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">First Name</label>
+                <label class="col-sm-3 col-form-label"style="color:#8E5431;font-size:18px;font-family: 'Georama'; letter-spacing:1px;">First Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="staff_fname" value="<?php echo $staff_fname; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Middle Name</label>
+                <label class="col-sm-3 col-form-label"style="color:#8E5431;font-size:18px;font-family: 'Georama'; letter-spacing:1px;">Middle Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="staff_mname" value="<?php echo $staff_mname; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Last Name</label>
+                <label class="col-sm-3 col-form-label"style="color:#8E5431;font-size:18px;font-family: 'Georama'; letter-spacing:1px;">Last Name</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="staff_lname" value="<?php echo $staff_lname; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Address</label>
+                <label class="col-sm-3 col-form-label"style="color:#8E5431;font-size:18px;font-family: 'Georama'; letter-spacing:1px;">Address</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="staff_address" value="<?php echo $staff_address; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Contact No.</label>
+                <label class="col-sm-3 col-form-label"style="color:#8E5431;font-size:18px;font-family: 'Georama'; letter-spacing:1px;">Contact No.</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="staff_contactno" value="<?php echo $staff_contactno; ?>">
                 </div>
             </div>
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Position</label>
+                <label class="col-sm-3 col-form-label"style="color:#8E5431;font-size:18px;font-family: 'Georama'; letter-spacing:1px;">Position</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="staff_position" value="<?php echo $staff_position; ?>">
                 </div>
@@ -139,13 +142,48 @@ else{
             ?>
              <div class="row mb-3">
                 <div class="offset-sm-3 col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="Sbutton">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="/kaffemariadb/staff.php" role="button">Cancel</a>
+                    <a class="btn btn-outline-primary" href="/kaffemariadb/staff.php" role="button" id="Cbutton">Cancel</a>
                 </div>
             </div>  
         </form>  
     </div>
+    <style type="text/css">
+
+body {
+margin-left: 300px;
+margin-top: 110px;
+font-family: Georama;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #212529;
+text-align: left;
+background-color: #F3E3D3;
+position: relative;
+}
+#Sbutton{
+  background-color: #C98860;
+  border:2px solid #C98860;
+  border-radius; 5px;
+}
+#Sbutton:hover{
+  background:  #FFF4ED;
+  color:  #8E5431;
+}
+#Cbutton{
+  background-color: #8E5431;
+  border:2px solid #8E5431;
+  border-radius; 5px;
+  color:white;
+}
+#Cbutton:hover{
+  background:  #FFF4ED;
+  color:  #8E5431;
+}
+
+</style>  
 </body>
 </html>
