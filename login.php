@@ -55,32 +55,104 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         border-radius: 5px;
         padding: 4px;
         border: none;
-        width: 60%;
-        color: black;
+        width: 75%;
+        color:  black;
         text-align: left;
+        font-size: 18px;
+        font-family: 'Georama';
+    }
+
+    #text1{
+        height: 25px;
+        border-radius: 5px;
+        padding: 4px;
+        border: none;
+        width: 75%;
+        color:  black;
+        text-align: left;
+        margin-left: 5px;
+        font-size: 18px;
+        font-family: 'Georama';
+    }
+
+    #bodytext{
+       font-family: "Georama";
+       font-weight: 700px;
+       font-size: 26px;
+       margin-top:10px;
+
     }
 
     #button{
         padding: 10px;
         width: 100px;
-        color:black;
-        background-color: white;
+        color: #F3E3D3;
+        background-color: #EFCEAD;
         border: none;
     }
+
 
     #box{
         background: #8E5431;
         border: 1px solid rgba(0, 0, 0, 0.6);
         margin: auto;
-        margin-top: 150px;
-        width:300px;
-        padding:20px;
-        color: white;
+        margin-top: 130px;
+        margin-left: 295px;
+        width:580px;
+        height: 180px;
+        padding:85px;
+        color:  #F3E3D3;
         border-radius: 20px;
+        position:absolute;
     }
-    #signup{
+
+    #headbox{
+    box-sizing: border-box;
+    position: absolute;
+    width: 400px;
+    height: 90px;
+    margin-left: 87px;
+    margin-top: -300px;
+    background: #C98860;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    font-family: 'Georama', sans-serif;
+    }
+    
+    #box2{
+        border: 1px solid #C98860;
+        background: 	#C98860;
+		font-size: 18px;
+		font-family: "Georama";
+        font-weight: 700px;
+		cursor: pointer;
+		margin: 10px;
+		color: white;
+		transition: 0.8;
+		border-radius: 8px;
+		height: 45px;
+		width: 120px;
+		transition-duration: 0.4s;
+		position:absolute;
+        margin: 100px;
+		top: 137px;
+		left: 215px;
+    }
+
+    #box2:hover{
+        background:  #FFF4ED;
+        color:  #8E5431;
+    }
+
+    ::-webkit-input-placeholder {
+        color: #C98860;
 
     }
+   
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georama&family=Ubuntu&display=swap" rel="stylesheet">
     </style>
     
 <div id="box">
@@ -88,19 +160,20 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         
 	<div>
-		<label>username</label>
-		<input type="text" name="user_name" required>
+		<label><p id= "bodytext">Username</label>
+		<input id="text" type="username" name="user_name" required placeholder="Username">
 	</div>
 
 	<div>
-		<label>password</label>
-		<input type="password" name="password" required>
+		<label><p id= "bodytext">Password</label>
+		<input id="text1" type="password" name="password" required placeholder="Password">
 	</div>
 
 	<div>
-		<input type="submit" value="Login">
+    <button type="submit" value="Login" id="box2">Login</button></a> <br>
 	</div>
-    </form>   
+    </form>  
+    <div id= "headbox"><div style="font-size: 50px;margin: 10px;color:  #F3E3D3;text-align: center; line-height:70px;margin-top: 7px;">LOGIN</div> 
 </div>
 </body>
 </html>
