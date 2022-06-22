@@ -7,13 +7,16 @@ include 'inventoryIngredient-create.php';
 
 ?>
 <body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Georama&family=Ubuntu&display=swap" rel="stylesheet">
     <div>
     <div class="bigside">
         <div class="container my-5" style="margin:22px;">
-            <h1>Inventory Table</h1><br>
-            <h2>Ingredient Table</h2>
-            <a class="btn btn-primary" role="button" class="open-button" onclick="openForm()">Add Ingredient</a>
-        <table class="table">
+            <h1 style="margin:22px; font-size:40px;font-family: 'Georama', sans-serif; letter-spacing:2px;; color:#8E5431; font-weight: bolder;">Inventory Table</h1><br>
+            <h2 style="margin:22px; font-size:40px;font-family: 'Georama', sans-serif; letter-spacing:2px;; color:#8E5431; font-weight: bolder;"Ingredient Table</h2>
+            <a class="btn btn-primary" role="button" class="open-button" onclick="openForm()" id="Abutton">Add Ingredient</a>
+        <table class="table" style="color:#8E5431;font-family: 'Georama', sans-serif;font-weight: bolder;">
             <thead>
                 <th>Ingredient ID</th>
                 <th>Ingredient Name</th>
@@ -64,7 +67,54 @@ include 'inventoryIngredient-create.php';
             </tbody>
         </table>
     </div>
-
+    <style type="text/css">
+      #Abutton{
+        border: 2px solid #C98860;
+        background: 	#C98860;
+		font-size: 13px;
+		font-family: "Georama";
+        font-weight: bold;
+		cursor: pointer;
+		color: white;
+		transition: 0.8;
+		border-radius: 8px;
+		height: 30px;
+		width: 140px;
+		transition-duration: 0.4s;
+		position:absolute;
+        line-height: 15px;
+        top:185px;
+        left:260px;
+      }
+      #Abutton:hover{
+        background:  #FFF4ED;
+        color:  #8E5431;
+      }
+      #newbev{
+        background-color: #F5F5F5;
+        border:3px solid #8E5431;
+        border-radius: 20px;
+      }
+      #Sbutton{
+        background-color: #C98860;
+        border:2px solid #C98860;
+        border-radius; 5px;
+      }
+      #Sbutton:hover{
+        background:  #FFF4ED;
+        color:  #8E5431;
+      }
+      #Cbutton{
+        background-color: #8E5431;
+        border:2px solid #8E5431;
+        border-radius; 5px;
+        color:white;
+      }
+      #Cbutton:hover{
+        background:  #FFF4ED;
+        color:  #8E5431;
+      }
+</style>  
     <!--POPUP FORM FOR ADD INGREDIENT-->
     <div class="container" id="newbev">
     <center>
