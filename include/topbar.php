@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-3">
                     <a class="navbar-brand" href="#">
-                        <img src="img\favicon.ico" alt="Avatar Logo" style="margin-left: 50px; width:40px; margin-top:2px;" class="rounded-pill"> 
+                        <img src="img\icon.jpg" alt="Avatar Logo" style="margin-left: 50px; width:40px; margin-top:2px;" class="rounded-pill"> 
                       </a>
                 </div>
                 <!--display the name of the logged in admin-->
