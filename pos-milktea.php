@@ -148,15 +148,9 @@ include 'include/pos-sidebar.html';
 
                     <div id="content">
                         <!--breadcrumb-->
-<<<<<<< HEAD
                         <div id="content-header" style= "margin-top: -30px;font-size: 16px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: bold;">
                             <div id="breadcrumb" style="font-size: 25px; font-weight: bold; margin-top: -60px;">
-                            <th>Milk Tea</th>    
-=======
-                        <div id="content-header">
-                            <div id="breadcrumb">
-                            <h5>MILK TEA</h5>    
->>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
+                            <th>MILK TEA</th>    
                             </div>
                         </div>
                         <!--end of breadcrumb-->
@@ -179,18 +173,7 @@ include 'include/pos-sidebar.html';
                                     <div class="widget-content nopadding">
                                         <form name="form1" action="" method='POST' class="form-horizontal">
                                             <div class="control-group">
-<<<<<<< HEAD
                                                 <label class="control-label" style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Beverage Name</label>
-=======
-                                                <label class="control-label">Customer Name</label>
-                                                <div class="controls">
-                                                <input type="text" class="form-control" placeholder="Customer Name" name="customer_name" />
-                                                </div>
-                                            </div>
-
-                                            <div class="control-group">
-                                                <label class="control-label">Beverage Name</label>
->>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                                                 <div class="controls">  
                                                     <select class="form-control" name="beverage_name" style= "margin-left: -18px; margin-top: -9px; width:350px;">
                                                         <?php
@@ -224,28 +207,7 @@ include 'include/pos-sidebar.html';
                                             </div>
 
                                             <div class="control-group">
-<<<<<<< HEAD
                                                 <label class="control-label" style="font-size: 15px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: 700px; margin-top: 8px; margin-left: -18px">Beverage Price</label>
-=======
-                                                <label class="control-label">Beverage Price</label>
-                                                <div class="controls">
-                                                    <select class="form-control" name="beverage_price">
-                                                        <?php
-                                                            $res=mysqli_query($connection, "SELECT beverage_price FROM beverage_size WHERE beverage_size_id = 1 OR beverage_size_id = 2");
-                                                            while($row =$res->fetch_assoc())
-                                                            {
-                                                                echo "<option>";
-                                                                echo $row["beverage_price"];
-                                                                echo "</option>";
-                                                            }
-                                                        ?>
-                                                    </select>                                                
-                                                </div>
-                                            </div>
-
-                                            <div class="control-group">
-                                                <label class="control-label">Payment Method</label>
->>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                                                 <div class="controls">
                                                     <select class="form-control" name="beverage_price"  style= "margin-left: -18px; margin-top:-10px; width: 350px;">
                                                         <?php
@@ -313,11 +275,7 @@ include 'include/pos-sidebar.html';
                                 <th>Beverage Quantity</th>
                                 <th>Beverage Price</th>
                                 <th>Payment Method</th>
-<<<<<<< HEAD
                                 <th>Date</th>
-=======
-                                <th>Date Released</th>
->>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                                 <th>Action</th>
                             </thead>
                             
@@ -348,19 +306,12 @@ include 'include/pos-sidebar.html';
                     }   else    {
                         mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '$_POST[beverage_price]', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
                         mysqli_query($connection, "INSERT INTO customer VALUES(NULL, '$_POST[customer_name]', NULL)") or die(mysqli_error($connection));
-<<<<<<< HEAD
-
-                    }
-                }
-
-=======
                         mysqli_query($connection, "UPDATE stock_master SET product_qty=product_qty-'$_POST[beverage_qty]' WHERE product_name='$_POST[beverage_name]' && product_size='$_POST[beverage_size]' ") or die(mysqli_error($connection));
                     }
                 }
 
 
                 #read all data
->>>>>>> ef2c05bc4820dab1dfd9a1860b971cca324e5eed
                 $sql = "SELECT s.*, c.customer_name FROM sales s, customer c WHERE s.date_released = c.date_released";            
                 $result= $connection->query($sql);
 

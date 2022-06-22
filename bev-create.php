@@ -48,11 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $beverage_price="";
         $payment_method="";
         
-        $successMessage = "Added successfully!";
         
-        header("location:/kaffemariadb/bev.php");
-        exit;
-
     }while(false);
 }
 ?>

@@ -40,8 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "Item added successfully!";
         
-        header("location:/kaffemariadb/inventory-item.php");
-        exit;
 
     }while(false);
 }

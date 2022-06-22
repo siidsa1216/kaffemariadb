@@ -105,6 +105,27 @@ include 'bev-create.php';
         background:  #FFF4ED;
         color:  #8E5431;
       }
+      .btn-primary {
+
+color: #8E5431;
+
+background-color: #FFF4ED;
+
+border-color: #8E5431;
+
+border-radius:10px;
+
+}
+
+.btn-primary:hover {
+
+color: #FFF4ED;
+
+background:#8E5431;
+
+border-color: #8E5431;
+
+}
 .btn-group-sm>.btn, .btn-sm {
     padding: .25rem .5rem;
     font-size: .875rem;

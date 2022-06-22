@@ -41,8 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
         $successMessage = "Ingredient added successfully!";
         
-        header("location:/kaffemariadb/inventory.php");
-        exit;
 
     }while(false);
 }

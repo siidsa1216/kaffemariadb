@@ -45,8 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $successMessage = "User added successfully!";
         
-        header("location:/kaffemariadb/manageaccounts.php");
-        exit;
 
     }while(false);
 }
