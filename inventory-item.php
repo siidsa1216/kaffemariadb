@@ -108,6 +108,35 @@ include 'inventoryItem-create.php';
         background:  #FFF4ED;
         color:  #8E5431;
       }
+      .btn-group-sm>.btn, .btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+.btn-danger {
+    color: #FFF4ED;
+    background-color:  #C98860;
+    border-color: #8E5431 ;
+    border-radius:10px;
+    border:2px solid;
+}
+.btn-danger:hover{
+    color: #FFF4ED;
+    background:#8E5431;
+} 
+
+.btn-primary {
+    color: #8E5431;
+    background-color: #FFF4ED;
+    border-color: #8E5431;
+    border-radius:10px;
+}
+.btn-primary:hover {
+    color: #FFF4ED;
+    background:#8E5431;
+    border-color: #8E5431;
+}
 </style> 
             <!--POPUP FORM FOR ADD INGREDIENT-->
     <div class="container" id="newbev" style="background-color: #F5F5F5;

@@ -7,34 +7,37 @@ include 'staff-add-function.php'
 
 ?>
 <body>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Georama&family=Ubuntu&display=swap" rel="stylesheet">
     <div>
     <div class="bigside">
-        <div class="container" style="margin:22px;">
+        <div class="container" style="margin:22px; font-size:40px;font-family: 'Georama', sans-serif; letter-spacing:2px;; color:#8E5431; font-weight: bolder;">
             <h1>Sales</h1>
         </div>
         <div class="formcontainer pb-2" style = "width:50%;" >
                 <form class="form-inline" name = "form1" method="GET">
                     <div class="col">    
                         <div class="row">
-                                <label for="">From Date</label>
-                                <input type="date" name ="from_date" class="form-control" value ="<?php if (isset($_GET['from_date'])){echo $_GET['from_date'];}?>" required>
+                                <label for="" style="color:#8E5431;font-family: 'Georama', sans-serif;font-weight: bolder;">From Date</label>
+                                <input type="date" name ="from_date" class="form-control" value ="<?php if (isset($_GET['from_date'])){echo $_GET['from_date'];}?>" required style="border-radius:20px; border:2px solid #8E5431; color: #8E5431;letter-spacing: 1px;">
                             </div>
                     </div>
                     <div class="col">
-                            <div class="row">
+                            <div class="row" style="color:#8E5431;font-family: 'Georama', sans-serif;font-weight: bolder;">
                                 <label for="">To Date</label>
-                                <input type="date" name ="to_date" class="form-control" value ="<?php if (isset($_GET['to_date'])){echo $_GET['to_date'];}?>" required>
+                                <input type="date" name ="to_date" class="form-control" value ="<?php if (isset($_GET['to_date'])){echo $_GET['to_date'];}?>" required style="border-radius:20px; border:2px solid #8E5431; color:#8E5431; letter-spacing: 1px;">
                             </div>
                             </div>
                         <div class="col">
                             <div class="row">
-                                <label for="">Click to Filter</label>
-                            <button type="submit" class="btn btn-primary">Filter</button>
+                                <label for="" style="color:#8E5431;font-family: 'Georama', sans-serif;font-weight: bolder;">Click to Filter</label>
+                            <button type="submit" class="btn btn-primary" id="filterbutton" style="border-radius:20px; font-family: 'Georama', sans-serif; letter-spacing:1px;">FILTER</button>
                             </div>
                         </div>
                 </form>
         </div>
-        <table class="table">
+        <table class="table" style="color:#8E5431;font-family: 'Georama', sans-serif;font-weight: bolder;">
             <thead>
                 <th>ID</th>
                 <th>Customer Name</th>
@@ -99,5 +102,20 @@ include 'staff-add-function.php'
         </table>
     </div>
     </div>
+<style type="text/css">
+      #filterbutton{
+        background-color: #C98860;
+        border:2px solid #C98860;
+        border-radius; 2px;
+      }
+      #filterbutton:hover{
+        background:  #FFF4ED;
+        color:  #8E5431;
+      }
+</style>
 </body>
+
+
+  
+  
 </html>
