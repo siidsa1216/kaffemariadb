@@ -27,7 +27,7 @@ body{
     height: 100vh;
     margin-left: 16%;
     padding: 20px;
-
+    overflow-y: scroll;
 }
 .buttonsss{
     align-items: center;

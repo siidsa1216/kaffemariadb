@@ -150,7 +150,7 @@ include 'include/pos-sidebar.html';
                         <!--breadcrumb-->
                         <div id="content-header" style= "margin-top: -30px;font-size: 16px; font-family: 'Georama', sans-serif; color:#8E5431; font-weight: bold;">
                             <div id="breadcrumb" style="font-size: 25px; font-weight: bold; margin-top: -60px;">
-                            <th>Milk Tea</th>    
+                            <th>MILK TEA</th>    
                             </div>
                         </div>
                         <!--end of breadcrumb-->

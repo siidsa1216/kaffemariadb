@@ -48,9 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         $staff_position="";
         
         $successMessage = "Supplier added successfully!";
-        
-        header("location:/kaffemariadb/staff.php");
-        exit;
 
     }while(false);
 }
