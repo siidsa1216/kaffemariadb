@@ -13,7 +13,7 @@ include 'include/head.html';
     
     <div class="bigside">
         <div class="container" style="margin:20px;">
-            <h1 style="margin-left:-22px; font-size:40px;font-family: 'Georama', sans-serif; letter-spacing:2px;; color:#8E5431; font-weight: bolder;">Beverage Table</h1>
+            <h1 style="margin-left:-22px; font-size:40px;font-family: 'Georama', sans-serif; letter-spacing:2px;; color:#8E5431; font-weight: bolder;">Stock Table</h1>
         </div>
         <table class="table" style="color:#8E5431;font-family: 'Georama', sans-serif;font-weight: bolder; margin-left:10px; margin-top:30px;">
             <thead>
