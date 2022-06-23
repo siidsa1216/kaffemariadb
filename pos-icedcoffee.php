@@ -115,7 +115,7 @@ include 'include/pos-sidebar.html';
                         <!--breadcrumb-->
                         <div id="content-header">
                             <div id="breadcrumb">
-                            <h5>Milk Tea</h5>    
+                            <h5>ICED COFFEE</h5>    
                             </div>
                         </div>
                         <br>
