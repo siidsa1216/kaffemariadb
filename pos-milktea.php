@@ -171,6 +171,23 @@ include 'include/pos-sidebar.html';
                                             </div>
 
                                             <div class="control-group">
+                                                <label class="control-label">Beverage Price</label>
+                                                <div class="controls">
+                                                    <select class="form-control" name="beverage_price">
+                                                        <?php
+                                                            $res=mysqli_query($connection, "SELECT beverage_price FROM beverage_size WHERE beverage_size_id = 1 OR beverage_size_id = 2");
+                                                            while($row =$res->fetch_assoc())
+                                                            {
+                                                                echo "<option>";
+                                                                echo $row["beverage_price"];
+                                                                echo "</option>";
+                                                            }
+                                                        ?>
+                                                    </select>                                                
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
                                                 <label class="control-label">Payment Method</label>
                                                 <div class="controls">
                                                     <select name="payment_method" class="form-control">
@@ -247,13 +264,13 @@ include 'include/pos-sidebar.html';
                 if(isset($_POST['submit'])){
 
                     $count = 0;
-                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_qty='$_POST[beverage_qty]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
+                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_price='$_POST[beverage_price]' && beverage_qty='$_POST[beverage_qty]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
                     $count=mysqli_num_rows($result);
                     
                     if($count>0){
                         $errorMessage = "Please fill up the required fields";
                     }   else    {
-                        mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '0', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
+                        mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '$_POST[beverage_price]', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
                         mysqli_query($connection, "INSERT INTO customer VALUES(NULL, '$_POST[customer_name]', NULL)") or die(mysqli_error($connection));
 
                     }
