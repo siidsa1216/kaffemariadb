@@ -314,7 +314,8 @@ include 'include/pos-sidebar.html';
                     <br><br>
 
                     
-<!--Fetch 2 data from different tables-->                    
+<!--Fetch 2 data from different tables-->      
+
                 </div>
             </div>
         </div>
