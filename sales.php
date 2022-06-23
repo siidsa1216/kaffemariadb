@@ -37,6 +37,7 @@ include 'staff-add-function.php'
         <table class="table">
             <thead>
                 <th>ID</th>
+                <th>Customer Name</th>
                 <th>Beverage Flavor</th>
                 <th>Quantity</th>
                 <th>Size</th>
@@ -53,9 +54,8 @@ include 'staff-add-function.php'
                 $from_date = $_GET['from_date'];
                 $to_date = $_GET['to_date'];
 
-                $query = "SELECT * FROM sales WHERE date_released BETWEEN ' $from_date' AND ' $to_date' ";
+                $query = "SELECT s.*, c.customer_name FROM sales s, customer c WHERE s.date_released BETWEEN ' $from_date' AND ' $to_date' AND s.date_released = c.date_released";
                 $result = mysqli_query($connection,  $query);
-
                
 
                 if(mysqli_num_rows($result) > 0)
@@ -64,10 +64,11 @@ include 'staff-add-function.php'
                              'beverage_qty' => 0, ];
 
                     foreach( $result as $row){  
-                    $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price'],
+                    $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price'] *$row['beverage_qty'],
                                  'beverage_qty' =>  $total['beverage_qty']+ $row['beverage_qty']];
                     echo "<tr>
                     <td>".$row["sales_ID"]. "</td>
+                    <td>".$row["customer_name"]. "</td>
                     <td>".$row["beverage_flavor"]. "</td>
                     <td>".$row["beverage_qty"]. "</td>
                     <td>".$row["beverage_size"]. "</td>
@@ -83,13 +84,15 @@ include 'staff-add-function.php'
                     echo '<td ><b>' . $total['beverage_price'] . '</b></td>';
                   
                    echo '</tr>';
-                   
-                
+                                  
                 }
                 else
                 {
                     echo "<tr>No record found.</tr>";
                 }
+                
+
+            
             }
         ?>
             </tbody>
