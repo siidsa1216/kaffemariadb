@@ -286,7 +286,7 @@ include 'include/pos-sidebar.html';
                 $total =['beverage_price' => 0];
                 while($row =$result->fetch_assoc())
                 {
-                    $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price']];
+                    $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price'] * $row['beverage_qty']];
                     echo "<tr>
                         <td>".$row["customer_name"]. "</td>
                         <td>".$row["beverage_flavor"]. "</td>
