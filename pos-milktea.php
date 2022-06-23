@@ -130,6 +130,13 @@ include 'include/pos-sidebar.html';
                                     <div class="widget-content nopadding">
                                         <form name="form1" action="" method='POST' class="form-horizontal">
                                             <div class="control-group">
+                                                <label class="control-label">Customer Name</label>
+                                                <div class="controls">
+                                                <input type="text" class="form-control" placeholder="Customer Name" name="customer_name" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
                                                 <label class="control-label">Beverage Name</label>
                                                 <div class="controls">  
                                                     <select class="form-control" name="beverage_name">
@@ -160,6 +167,13 @@ include 'include/pos-sidebar.html';
                                                 <label class="control-label">Beverage Quantity</label>
                                                 <div class="controls">
                                                 <input type="text" class="form-control" placeholder="Beverage Quantity" name="beverage_qty" />
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">Beverage Price</label>
+                                                <div class="controls">
+                                                <input type="text" class="form-control" placeholder="Beverage Price" name="beverage_price" />
                                                 </div>
                                             </div>
 
@@ -208,11 +222,13 @@ include 'include/pos-sidebar.html';
                         <div class="container bg-white p-3">
                         <table class="table text-center">
                             <thead>
+                                <th>Customer ID</th>
                                 <th>Beverage Name</th>
                                 <th>Beverage Size</th>
                                 <th>Beverage Quantity</th>
                                 <th>Beverage Price</th>
                                 <th>Payment Method</th>
+                                <th>Date Released</th>
                                 <th>Action</th>
                             </thead>
                             
@@ -238,17 +254,19 @@ include 'include/pos-sidebar.html';
                 if(isset($_POST['submit'])){
 
                     $count = 0;
-                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_qty='$_POST[beverage_qty]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
+                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_qty='$_POST[beverage_qty]' && beverage_price='$_POST[beverage_price]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
                     $count=mysqli_num_rows($result);
                     
                     if($count>0){
                         $errorMessage = "Please fill up the required fields";
                     }   else    {
                         mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '0', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
+                        mysqli_query($connection, "INSERT INTO customer VALUES(NULL, '$_POST[customer_name]', NULL)") or die(mysqli_error($connection));
+
                     }
                 }
 
-                $sql = "SELECT * FROM sales";            
+                $sql = "SELECT s.*, c.customer_name FROM sales s, customer c WHERE s.date_released = c.date_released";            
                 $result= $connection->query($sql);
 
                 if (!$result){
@@ -260,11 +278,13 @@ include 'include/pos-sidebar.html';
                 {
                     $total = ['beverage_price' =>  $total['beverage_price']+ $row['beverage_price']];
                     echo "<tr>
+                        <td>".$row["customer_name"]. "</td>
                         <td>".$row["beverage_flavor"]. "</td>
                         <td>".$row["beverage_size"]. "</td>
                         <td>".$row["beverage_qty"]. "</td>
                         <td>".$row["beverage_price"]. "</td>
                         <td>".$row["payment_method"]. "</td>
+                        <td>".$row["date_released"]. "</td>
                         <td>
                             <a class='btn btn-danger btn-sm' href='/kaffemariadb/pos-milktea-delete.php?sales_ID=$row[sales_ID]'>Delete</a>
                         </td>
