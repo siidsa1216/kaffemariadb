@@ -171,13 +171,6 @@ include 'include/pos-sidebar.html';
                                             </div>
 
                                             <div class="control-group">
-                                                <label class="control-label">Beverage Price</label>
-                                                <div class="controls">
-                                                <input type="text" class="form-control" placeholder="Beverage Price" name="beverage_price" />
-                                                </div>
-                                            </div>
-
-                                            <div class="control-group">
                                                 <label class="control-label">Payment Method</label>
                                                 <div class="controls">
                                                     <select name="payment_method" class="form-control">
@@ -254,7 +247,7 @@ include 'include/pos-sidebar.html';
                 if(isset($_POST['submit'])){
 
                     $count = 0;
-                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_qty='$_POST[beverage_qty]' && beverage_price='$_POST[beverage_price]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
+                    $result = mysqli_query($connection, "SELECT * FROM sales  WHERE beverage_flavor='$_POST[beverage_name]' && beverage_size='$_POST[beverage_size]' && beverage_qty='$_POST[beverage_qty]' && payment_method='$_POST[payment_method]'") or die(mysqli_error($connection));
                     $count=mysqli_num_rows($result);
                     
                     if($count>0){
