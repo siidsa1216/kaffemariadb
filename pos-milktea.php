@@ -232,7 +232,7 @@ include 'include/pos-sidebar.html';
                         <div class="container bg-white p-3">
                         <table class="table text-center">
                             <thead>
-                                <th>Customer ID</th>
+                                <th>Customer Name</th>
                                 <th>Beverage Name</th>
                                 <th>Beverage Size</th>
                                 <th>Beverage Quantity</th>
