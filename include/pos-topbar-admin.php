@@ -13,7 +13,7 @@
               </div>
                 <div class="col-3 mt-1">
                     <a class="navbar-brand" href="#">
-                        <img src="img\qoobee.jpg" class="img-profile rounded-circle" style="margin-left: 50px; width:40px; margin-top:2px;"> 
+                        <img src="img\icon.jpg" class="img-profile rounded-circle" style="margin-left: 50px; width:40px; margin-top:2px;"> 
                       </a>
                 </div>
                 <!--display the name of the logged in admin-->

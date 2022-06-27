@@ -190,7 +190,7 @@ include 'include/pos-sidebar-user.html';
                                                 <div class="controls">  
                                                     <select class="form-control" name="beverage_name" style= "margin-left: -18px; margin-top: -9px; width:350px;">
                                                         <?php
-                                                            $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 1 OR beverage_name_id = 6 OR beverage_name_id = 7");
+                                                            $res=mysqli_query($connection, "SELECT beverage_name,beverage_name_id FROM beverage_name WHERE beverage_name_id = 5 OR beverage_name_id = 6 OR beverage_name_id = 7");
                                                             while($row =$res->fetch_assoc())
                                                             {
                                                                 echo "<option>";
@@ -293,6 +293,8 @@ include 'include/pos-sidebar-user.html';
                             </thead>
                             
                             <?php
+
+
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
@@ -319,6 +321,7 @@ include 'include/pos-sidebar-user.html';
                     }   else    {
                         mysqli_query($connection, "INSERT INTO sales VALUES(NULL, '$_POST[beverage_name]', '$_POST[beverage_size]', '$_POST[beverage_qty]', '$_POST[beverage_price]', '$_POST[payment_method]', NULL)") or die(mysqli_error($connection));
                         mysqli_query($connection, "INSERT INTO customer VALUES(NULL, '$_POST[customer_name]', NULL)") or die(mysqli_error($connection));
+                        mysqli_query($connection, "UPDATE stock_master SET product_qty=product_qty-'$_POST[beverage_qty]' WHERE product_name='$_POST[beverage_name]' && product_size='$_POST[beverage_size]' ") or die(mysqli_error($connection));
 
                     }
                 }

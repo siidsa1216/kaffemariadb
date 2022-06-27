@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>KAFFE MARIA Login</title>
 </head>
 <body>
     <style type="text/css">
@@ -181,7 +181,7 @@ padding:0;
     <button type="submit" value="Login" id="box2">Login</button></a> <br>
 	</div>
     </form>  
-    <div id= "headbox"><div style="font-size: 50px;margin: 10px;color:  #F3E3D3;text-align: center; line-height:70px;margin-top: 7px;">LOGIN</div> 
+    <div id= "headbox"><div style="font-size: 50px;margin: 10px;color:  #F3E3D3;text-align: center; line-height:70px;margin-top: 7px;">KAFFE MARIA</div> 
 </div>
 </div> 
 </body>

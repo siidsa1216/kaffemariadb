@@ -23,7 +23,6 @@ include 'bev-create.php';
                 <th>Quantity</th>
                 <th>Size</th>
                 <th>Price</th>
-                <th>Payment Method</th>
                 <th>Action</th>
             </thead>
     
@@ -45,7 +44,6 @@ include 'bev-create.php';
                     <td>".$row["beverage_qty"]. "</td>
                     <td>".$row["beverage_size"]. "</td>
                     <td>".$row["beverage_price"]. "</td>
-                    <td>".$row["payment_method"]. "</td>
                     <td>
                         <a class='btn btn-primary btn-sm' href='/kaffemariadb/bev-edit.php?beverage_No=$row[beverage_No]'>Edit</a>
                         <a class='btn btn-danger btn-sm' href='/kaffemariadb/bev-delete.php?beverage_No=$row[beverage_No]'>Delete</a>
@@ -192,12 +190,6 @@ border-color: #8E5431;
                 <label class="col-sm-5 col-form-label">Price</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="beverage_price"> <!--value="<?php echo $beverage_price; ?>" required-->
-                </div>
-            </div>
-            <div class="row mb-3">
-                <label class="col-sm-5 col-form-label">Payment</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" name="payment_method"> <!--value="<?php echo $payment_method; ?>"required-->
                 </div>
             </div>
 
